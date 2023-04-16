@@ -1,0 +1,11 @@
+.banner {
+    position: relative;
+    display: flex;
+
+    img {
+        width: 100vw;
+        height: 50vh;
+        object-fit: cover;
+        object-position: 0 30%;
+    }
+}
