@@ -1,6 +1,8 @@
 @import '../../../application/globals/colors.scss';
 @import '../../../application/globals/fonts.scss';
 
+$breakpoint: 768px;
+
 .header {
     background-color: $white;
     position: relative;
@@ -10,6 +12,11 @@
     height: 5rem;
     justify-content: space-around;
     align-items: center;
+
+    @media (max-width: $breakpoint) {
+        flex-direction: column;
+        height: 5.5rem;
+    }
 
     .logo {
         display: flex;
@@ -25,25 +32,58 @@
             font-weight: 700;
             color: $yellow;
         }
+
+        @media (max-width: $breakpoint) {
+            display: none;
+        }
     }
 
-    Button {
-        margin: 1rem;
-        font-family: 'Montserrat';
-        font-size: 1rem;
-        font-weight: 600;
-        color: $black;
-        background-color: $white;
-        border: 0;
-        border-radius: 0;
-        cursor: pointer;
-        box-shadow: none;
-        border-radius: 1.5rem;
+    .search {
+        width: 40vw;
+        Button {
+            margin: 1rem;
+        }
 
-        &:hover {
-            background-color: $yellow;
-            color: $white;
+        @media (max-width: $breakpoint) {
+            width: 90vw;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 0.5rem;
+
+        Button {
+            margin: auto;
+            color: $black;
+            background-color: $white;
+            border: 0;
+            border-radius: 0;
+            cursor: pointer;
             box-shadow: none;
+            border-radius: 1.5rem;
+            height: 1.5rem;
+    
+            @media (max-width: $breakpoint) {
+                font-size: 0.5rem;
+            }
+    
+            p {
+                font-family: 'Montserrat';
+                font-size: 1rem;
+                font-weight: 600;
+    
+                @media (max-width: $breakpoint) {
+                    font-size: 0.7rem;
+                }
+            }
+    
+            &:hover {
+                background-color: $yellow;
+                color: $white;
+                box-shadow: none;
+            }
         }
     }
 }

@@ -7,5 +7,9 @@
         height: 50vh;
         object-fit: cover;
         object-position: 0 30%;
+
+        @media (max-width: 768px) {
+            height: 20vh;
+        }
     }
 }

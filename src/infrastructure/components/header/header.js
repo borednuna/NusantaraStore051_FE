@@ -24,46 +24,50 @@ const Header = () => {
             </div>
 
             <ThemeProvider theme={Theme}>
-            <FormControl
-                sx={{ m: 1, width: '35rem' }} 
-                variant="outlined" 
-                size='small'
-                color='yellow'
-            >
-                <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
-                <OutlinedInput
-                    id="outlined-adornment-search"
-                    endAdornment={
-                        <InputAdornment position="end">
-                            <IconButton
-                            aria-label="search"
-                            edge="end"
-                            >
-                            <SearchIcon />
-                            </IconButton>
-                        </InputAdornment>
-                    }
-                    label="Search"
-                />
-            </FormControl>
+                <div className='search'>
+                    <FormControl
+                        sx={{ m: 1, width: '100%' }} 
+                        variant="outlined" 
+                        size='small'
+                        color='yellow'
+                    >
+                        <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
+                        <OutlinedInput
+                            id="outlined-adornment-search"
+                            endAdornment={
+                                <InputAdornment position="end">
+                                    <IconButton
+                                    aria-label="search"
+                                    edge="end"
+                                    >
+                                    <SearchIcon />
+                                    </IconButton>
+                                </InputAdornment>
+                            }
+                            label="Search"
+                        />
+                    </FormControl>
+                </div>
             </ThemeProvider>
 
-            <div className='wishlist'>
-                <Button variant="contained" startIcon={<BookmarksIcon />}>
-                    Wishlist
-                </Button>
-            </div>
+            <div className='buttons'>
+                <div className='wishlist'>
+                    <Button variant="contained" startIcon={<BookmarksIcon />}>
+                        <p>Wishlist</p>
+                    </Button>
+                </div>
 
-            <div className='cart'>
-                <Button variant="contained" startIcon={<ShoppingCartIcon />}>
-                    Cart
-                </Button>
-            </div>
+                <div className='cart'>
+                    <Button variant="contained" startIcon={<ShoppingCartIcon />}>
+                        <p>Cart</p>
+                    </Button>
+                </div>
 
-            <div className='login'>
-                <Button variant="contained" startIcon={<LoginIcon />}>
-                    Login
-                </Button>
+                <div className='login'>
+                    <Button variant="contained" startIcon={<LoginIcon />}>
+                        <p>Login</p>
+                    </Button>
+                </div>
             </div>
         </div>
     )
