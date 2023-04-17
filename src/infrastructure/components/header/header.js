@@ -30,13 +30,13 @@ const Header = () => {
                 size='small'
                 color='yellow'
             >
-                <InputLabel htmlFor="outlined-adornment-password">Search</InputLabel>
+                <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
                 <OutlinedInput
-                    id="outlined-adornment-password"
+                    id="outlined-adornment-search"
                     endAdornment={
                         <InputAdornment position="end">
                             <IconButton
-                            aria-label="toggle password visibility"
+                            aria-label="search"
                             edge="end"
                             >
                             <SearchIcon />

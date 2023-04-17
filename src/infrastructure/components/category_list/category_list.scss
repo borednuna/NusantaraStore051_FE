@@ -1,0 +1,17 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+.category-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+
+  h2 {
+    font-family: 'montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: $black;
+  }
+}
