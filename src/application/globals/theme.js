@@ -13,6 +13,9 @@ const Theme = () => {
             white: {
                 main: '#ffffff',
             },
+            grey: {
+                main: '#858585',
+            }
         },
     });
 
