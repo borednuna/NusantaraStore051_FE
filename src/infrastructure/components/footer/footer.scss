@@ -1,8 +1,96 @@
 @import '../../../application/globals/colors.scss';
 @import '../../../application/globals/fonts.scss';
 
+$breakpoint: 768px;
+
 .footer {
     width: 100vw;
     height: 5rem;
     background-color: $black;
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    justify-content: space-between;
+
+    @media (max-width: $breakpoint) {
+        height: 10rem;
+        flex-direction: column;
+    }
+
+    .logo {
+        display: flex;
+        background-color: $white;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        text-align: center;
+        align-items: center;
+        border: 1.5px solid $yellow;
+
+        @media (max-width: $breakpoint) {
+            text-align: center;
+            width: 100%;
+            padding: 0;
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: row;
+            margin: auto;
+
+            #nusantara {
+                font-family: 'Playfair Display';
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+    
+            #store {
+                font-family: 'Playfair Display';
+                font-size: 1.5rem;
+                font-weight: 700;
+                color: $yellow;
+            }
+        }
+    }
+
+    .logos {
+        width: fit-content;
+        margin: auto;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: row;
+        padding-right: 2rem;
+
+        @media (max-width: $breakpoint) {
+            padding: 0;
+            padding-bottom: 1rem;
+        }
+
+        p {
+            font-family: 'Montserrat';
+            font-size: 1rem;
+            font-weight: 500;
+            margin: auto;
+            color: $yellow;
+            padding-left: 2rem;
+            padding-right: 2rem;
+
+            @media (max-width: $breakpoint) {
+                font-size: 0.8rem;
+            }
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                transition: all 0.3s ease;
+            }
+        }
+    }
 }

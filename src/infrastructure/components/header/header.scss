@@ -20,6 +20,10 @@ $breakpoint: 768px;
 
     .logo {
         display: flex;
+        &:hover {
+            cursor: pointer;
+        }
+
         #nusantara {
             font-family: 'Playfair Display';
             font-size: 2rem;
@@ -65,9 +69,10 @@ $breakpoint: 768px;
             cursor: pointer;
             box-shadow: none;
             border-radius: 1.5rem;
-            height: 1.5rem;
-    
+            height: 3rem;
+            
             @media (max-width: $breakpoint) {
+                height: 1.5rem;
                 font-size: 0.5rem;
             }
     
