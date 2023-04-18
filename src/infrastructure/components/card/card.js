@@ -7,7 +7,7 @@ import StarIcon from '@mui/icons-material/Star';
 const Card = () => {
   return (
     <div className="card">
-        <img src={cover}/>
+        <img src={cover} alt="Cover for product"/>
         <p id="category">Footwear</p>
         <p id="name">Sepatu Ngabers</p>
         <p id="price">Rp9.999.999,-</p>

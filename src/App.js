@@ -1,16 +1,12 @@
 import './App.scss';
 import Header from './infrastructure/components/header/header';
-import Banner from './infrastructure/components/banner/banner';
-import CategoryList from './infrastructure/components/category_list/category_list';
-import Card from './infrastructure/components/card/card';
+import Footer from './infrastructure/components/footer/footer';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Banner />
-      <CategoryList /> */}
-      <Card />
+      <Footer />
     </div>
   );
 }
