@@ -5,24 +5,24 @@ $breakpoint: 768px;
 
 .gallery {
     border-radius: 1rem;
-    width: 45rem;
-    height: 30rem;
+    width: 55vw;
+    height: 60vh;
 
     @media (max-width: $breakpoint) {
         width: 100vw;
-        height: 20rem;
+        height: 40vh;
         border-radius: 0;
     }
 
     img {
-        width: 45rem;
-        height: 30rem;
+        width: 55vw;
+        height: 60vh;
         border-radius: 1rem;
         object-fit: cover;
 
         @media (max-width: $breakpoint) {
             width: 100vw;
-            height: 20rem;
+            height: 40vh;
             border-radius: 0;
         }
     }
