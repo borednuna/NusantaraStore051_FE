@@ -1,13 +1,13 @@
 import './App.scss';
 import Header from './infrastructure/components/header/header';
 import Footer from './infrastructure/components/footer/footer';
-import Gallery from './infrastructure/components/gallery/gallery';
+import SellerCard from './infrastructure/components/seller_card/seller_card';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Gallery />
+      <SellerCard />
       <Footer />
     </div>
   );

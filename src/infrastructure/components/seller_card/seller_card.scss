@@ -1,0 +1,70 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.sellercard {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: $black;
+    color: $white;
+    font-family: 'Montserrat';
+    height: 10vh;
+    width: 100%;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    align-items: center;
+    justify-content: space-around;
+
+    @media (max-width: $breakpoint) {
+        justify-content: space-between;
+        height: 5vh;
+        width: 80vw;
+    }
+
+    .description {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        .text {
+            line-height: 0.5rem;
+            margin-left: 1rem;
+    
+            h1 {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: $yellow;
+
+                @media (max-width: $breakpoint) {
+                    font-size: 0.9rem;
+                    width: 100%;
+                }
+            }
+    
+            h2 {
+                font-size: 0.9rem;
+                font-weight: 400;
+
+                @media (max-width: $breakpoint) {
+                    font-size: 0.7rem;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .chatbutton {
+        p {
+            margin-left: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: $yellow;
+
+            @media (max-width: $breakpoint) {
+                display: none;
+            }
+        }
+    }
+}

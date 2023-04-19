@@ -5,7 +5,7 @@ const Theme = () => {
     const theme = createTheme({
         palette: {
             yellow: {
-                main: yellow[500],
+                main: '#FFD600',
             },
             black: {
                 main: '#000000',
