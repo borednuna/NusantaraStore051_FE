@@ -1,0 +1,29 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.gallery {
+    border-radius: 1rem;
+    width: 45rem;
+    height: 30rem;
+
+    @media (max-width: $breakpoint) {
+        width: 100vw;
+        height: 20rem;
+        border-radius: 0;
+    }
+
+    img {
+        width: 45rem;
+        height: 30rem;
+        border-radius: 1rem;
+        object-fit: cover;
+
+        @media (max-width: $breakpoint) {
+            width: 100vw;
+            height: 20rem;
+            border-radius: 0;
+        }
+    }
+}
