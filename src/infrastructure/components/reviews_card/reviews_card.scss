@@ -1,0 +1,79 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.reviewscard {
+    background-color: $gray;
+    height: fit-content;
+    width: 35vw;
+    border-radius: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+    font-family: 'Montserrat';
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: $breakpoint) {
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        text-align: center;
+        font-weight: 600;
+        width: 100%;
+
+        @media (max-width: $breakpoint) {
+            font-size: 1.3rem;
+        }
+    }
+
+    #load {
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 600;
+        width: 100%;
+        text-decoration: underline;
+        cursor: pointer;
+
+        @media (max-width: $breakpoint) {
+            font-size: 1rem;
+        }
+    }
+
+    .individual-cards {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+
+        h2 {
+            font-size: 1.2rem;
+            font-weight: 600;
+
+            @media (max-width: $breakpoint) {
+                font-size: 1rem;
+            }
+        }
+
+        h3 {
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.2rem;
+
+            @media (max-width: $breakpoint) {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

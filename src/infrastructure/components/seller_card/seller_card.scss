@@ -16,11 +16,12 @@ $breakpoint: 768px;
     padding: 1.5rem;
     align-items: center;
     justify-content: space-around;
+    box-sizing: border-box;
 
     @media (max-width: $breakpoint) {
         justify-content: space-between;
-        height: 5vh;
-        width: 80vw;
+        height: 12vh;
+        border-radius: 0;
     }
 
     .description {
