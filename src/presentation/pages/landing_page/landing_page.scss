@@ -1,0 +1,160 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+@mixin setSubStyle($text-on-left) {
+    font-family: 'Playfair Display';
+    font-size: 5rem;
+    font-weight: 700;
+    width: 20vw;
+    margin: 0;
+    text-align: right;
+    margin-right: 7rem;
+    color: $yellow;
+    
+    @if $text-on-left {
+        text-align: left;
+        margin-left: 5rem;
+        color: $black;
+    }
+
+    @media (max-width: $breakpoint) {
+        width: 100vw;
+        font-size: 2.2rem;
+        text-align: center;
+        margin: 1rem;
+    }
+}
+
+@mixin setCarouselStyle($text-on-left) {
+    width: 68vw;
+    background-color: $black;
+    border-radius: 0 2rem 2rem 0;
+    
+    @if $text-on-left {
+        background-color: $yellow;
+        border-radius: 2rem 0 0 2rem;
+        padding-left: 3rem;
+    }
+
+    @media (max-width: $breakpoint) {
+        width: 100vw;
+        padding: 0;
+        border-radius: 0;
+    }
+}
+
+.landingpage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+
+        #nusantara {
+            font-family: 'Playfair Display';
+            font-size: 2rem;
+            font-weight: 700;
+        }
+    
+        #store {
+            font-family: 'Playfair Display';
+            font-size: 2rem;
+            font-weight: 700;
+            color: $yellow;
+        }
+
+        @media (min-width: $breakpoint) {
+            display: none;
+        }
+    }
+
+    h1 {
+        font-family: 'Montserrat';
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    #onsale {
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5rem;
+        align-items: center;
+
+        @media (max-width: $breakpoint) {
+            flex-direction: column;
+        }
+
+        #subtitle-onsale {
+            @include setSubStyle(true);
+        }
+
+        .carousel-onsale {
+            @include setCarouselStyle(true);
+        }
+    }
+
+    #featured {
+        height: fit-content;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        align-items: center;
+
+        @media (max-width: $breakpoint) {
+            flex-direction: column;
+        }
+
+        .carousel-featured {
+            @include setCarouselStyle(false);
+        }
+
+        #subtitle-featured {
+            @include setSubStyle(false);
+        }
+    }
+
+    #allproducts {
+        padding-bottom: 2rem;
+        .allproducttext {
+            font-family: 'Playfair Display';
+            font-size: 5rem;
+            font-weight: 700;
+            color: $black;
+            margin: 0;
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        Button {
+            display: flex;
+            margin: auto;
+            color: $black;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            text-decoration: underline;
+            font-size: 1.5rem;
+            border: 1px $yellow;
+
+            @media (max-width: $breakpoint) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
