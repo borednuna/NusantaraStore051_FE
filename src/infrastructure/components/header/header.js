@@ -5,7 +5,6 @@ import './header.scss'
 import { ThemeProvider } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
 import InputAdornment from '@mui/material/InputAdornment';
 import FormControl from '@mui/material/FormControl';
 import Button from '@mui/material/Button';
@@ -31,9 +30,9 @@ const Header = () => {
                         size='small'
                         color='yellow'
                     >
-                        <InputLabel htmlFor="outlined-adornment-search">Search</InputLabel>
                         <OutlinedInput
                             id="outlined-adornment-search"
+                            placeholder='Search'
                             endAdornment={
                                 <InputAdornment position="end">
                                     <IconButton
@@ -44,7 +43,6 @@ const Header = () => {
                                     </IconButton>
                                 </InputAdornment>
                             }
-                            label="Search"
                         />
                     </FormControl>
                 </div>
