@@ -62,11 +62,11 @@ const ProfilePage = () => {
             <h1>My Profile</h1>
             <Box className="boxcontainer">
                 <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                    <Tabs value={tabs} onChange={handleChangeTabs} aria-label="basic tabs example">
-                    <Tab label="General" {...a11yProps(0)} />
-                    <Tab label="Addresses" {...a11yProps(1)} />
-                    <Tab label="Shopping History" {...a11yProps(2)} />
-                    <Tab label="Manage Store" {...a11yProps(3)} />
+                    <Tabs value={tabs} onChange={handleChangeTabs} aria-label="basic tabs example" variant="scrollable">
+                        <Tab label="General" {...a11yProps(0)} />
+                        <Tab label="Addresses" {...a11yProps(1)} />
+                        <Tab label="Shopping History" {...a11yProps(2)} />
+                        <Tab label="Manage Store" {...a11yProps(3)} />
                     </Tabs>
                 </Box>
                 <TabPanel value={tabs} index={0}>
