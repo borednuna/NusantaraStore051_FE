@@ -1,0 +1,28 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.chatfab {
+    position: fixed;
+    z-index: 5;
+    bottom: 1rem;
+    right: 1rem;
+
+    @media (max-width: $breakpoint) {
+        bottom: 3.5rem;
+        right: 0.5rem;
+    }
+
+    .fab {
+        background-color: $yellow;
+        color: $black;
+        font-family: 'Montserrat';
+        font-weight: 600;
+
+        &:hover {
+            background-color: $black;
+            color: $yellow;
+        }
+    }
+}
