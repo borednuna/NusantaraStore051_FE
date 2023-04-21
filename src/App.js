@@ -2,14 +2,14 @@ import './App.scss';
 import Header from './infrastructure/components/header/header';
 import Footer from './infrastructure/components/footer/footer';
 import ChatFab from './infrastructure/components/chat_fab/chat_fab';
-import ProductDetails from './presentation/pages/product_details/product_details';
+import ProfilePage from './presentation/pages/profile_page/profile_page';
 
 function App() {
   return (
     <div className="App">
       <ChatFab />
       <Header />
-      <ProductDetails />
+      <ProfilePage />
       <Footer />
     </div>
   );
