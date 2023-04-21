@@ -17,7 +17,7 @@ const About = () => {
                     aria-controls="panel1a-content"
                     id="panel1a-header"
                 >
-                    <h2>What is this website ?</h2>
+                    <h2>What is this website?</h2>
                 </AccordionSummary>
                 <AccordionDetails>
                     <p>This is a fully functioning e-commerce website created as a final project of MCI / IIM Lab Open Recruitment 2023</p>
@@ -29,7 +29,7 @@ const About = () => {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <h2>What tech stack is this website built on ?</h2>
+                    <h2>What tech stack is this website built on?</h2>
                 </AccordionSummary>
                 <AccordionDetails>
                     <p>
@@ -51,7 +51,7 @@ const About = () => {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <h2>Is this project open source ?</h2>
+                    <h2>Is this project open source?</h2>
                 </AccordionSummary>
                 <AccordionDetails>
                     <p>
@@ -65,7 +65,7 @@ const About = () => {
                     aria-controls="panel2a-content"
                     id="panel2a-header"
                 >
-                    <h2>Who built this website ?</h2>
+                    <h2>Who built this website?</h2>
                 </AccordionSummary>
                 <AccordionDetails>
                     <p>
