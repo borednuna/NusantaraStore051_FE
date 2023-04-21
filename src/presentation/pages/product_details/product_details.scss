@@ -1,0 +1,94 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.productdetails {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    .head {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @media (max-width: $breakpoint) {
+            flex-direction: column;
+            margin: 0;
+        }
+    }
+
+    .details {
+        display: flex;
+        flex-direction: row;
+        width: 94%;
+        margin: auto;
+        justify-content: space-between;
+        margin-top: 1.1rem;
+
+        @media (max-width: $breakpoint) {
+            flex-direction: column;
+        }
+
+        .description {
+            width: 53vw;
+
+            @media (max-width: $breakpoint) {
+                width: 100%;
+                margin: 0;
+            }
+
+            #subtitle {
+                font-family: 'Montserrat';
+                font-size: 1.5rem;
+                font-weight: 600;
+                padding: 0.8rem;
+                padding-bottom: 0;
+            }
+
+            #subtext {
+                font-family: 'Montserrat';
+                font-size: 0.9rem;
+                font-weight: 400;
+                line-height: 1.2rem;
+                padding: 0.8rem;
+                padding-top: 0;
+                text-align: justify;
+
+                @media (max-width: $breakpoint) {
+                    font-size: 0.8rem;
+                }
+
+                table {
+                    width: 100%;
+                    border-collapse: collapse;
+
+                    tr {
+                        td {
+                            border: 1.2px solid $gray;
+                            padding: 0.4rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .recommends {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 2rem;
+
+        #subtitle {
+            font-family: 'Montserrat';
+            font-size: 2rem;
+            font-weight: 600;
+            padding: 0.8rem;
+            padding-bottom: 0;
+            text-align: center;
+        }
+    }
+}

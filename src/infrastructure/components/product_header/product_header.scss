@@ -4,14 +4,17 @@
 $breakpoint: 768px;
 
 .productheader {
-    width: 40vw;
+    width: 37vw;
     position: relative;
     display: flex;
     flex-direction: column;
     font-family: 'Montserrat';
+    padding-right: 2rem;
 
     @media (max-width: $breakpoint) {
         width: 100vw;
+        text-align: center;
+        padding-right: 0;
     }
 
     h1 {
@@ -57,8 +60,7 @@ $breakpoint: 768px;
         justify-content: space-between;
 
         @media (max-width: $breakpoint) {
-            margin-left: 1rem;
-            margin-right: 1rem;
+            justify-content: space-around;
         }
 
         p {
@@ -75,5 +77,9 @@ $breakpoint: 768px;
     .formcontrol {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $breakpoint) {
+            justify-content: space-around;
+        }
     }
 }

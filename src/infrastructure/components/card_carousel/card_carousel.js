@@ -44,7 +44,7 @@ const CardCarousel = () => {
             <swiper-container
                 ref={swiperElRef}
                 slides-per-view={view}
-                navigation="true"
+                navigation="false"
                 pagination="false"
                 loop="true"
                 className="my-swiper"

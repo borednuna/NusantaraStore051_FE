@@ -10,7 +10,7 @@ $breakpoint: 768px;
     background-color: $black;
     color: $white;
     font-family: 'Montserrat';
-    height: 10vh;
+    height: 6rem;
     width: 100%;
     border-radius: 1rem;
     padding: 1.5rem;
@@ -21,7 +21,6 @@ $breakpoint: 768px;
     @media (max-width: $breakpoint) {
         justify-content: space-between;
         height: 12vh;
-        border-radius: 0;
     }
 
     .description {

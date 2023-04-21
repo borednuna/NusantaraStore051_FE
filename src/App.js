@@ -1,13 +1,13 @@
 import './App.scss';
 import Header from './infrastructure/components/header/header';
 import Footer from './infrastructure/components/footer/footer';
-import LandingPage from './presentation/pages/landing_page/landing_page';
+import ProductDetails from './presentation/pages/product_details/product_details';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <LandingPage />
+      <ProductDetails />
       <Footer />
     </div>
   );
