@@ -1,0 +1,37 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.about {
+    width: 100%;
+    height: fit-content;
+    min-height: 68vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+
+    h1 {
+        margin: auto;
+        height: 3rem;
+        font-family: 'Montserrat';
+    }
+
+    .accordions {
+        width: 70%;
+        margin: auto;
+        font-family: 'Montserrat';
+
+        h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 0.95rem;
+            font-weight: 400;
+            line-height: 1.5rem;
+        }
+    }
+}
