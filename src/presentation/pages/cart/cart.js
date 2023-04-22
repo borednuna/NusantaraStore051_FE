@@ -27,97 +27,97 @@ const Cart = () => {
         <div className="cart">
             <h1>My Cart</h1>
             <div className="listitems">
-            <List component="nav" aria-label="mailbox folders">
-                <ListItem >
+                <List component="nav" aria-label="mailbox folders">
+                    <ListItem >
+                        <div className="product">
+                            <div className="lefttext">
+                                <p id="title">Sepatu Ngabers</p>
+                                <p id="indprice">Rp900.000,-</p>
+                                <p id="variety">Color: Red, Size: 47</p>
+                                <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
+                                    Delete
+                                </Button>
+                            </div>
+                            <div className="countfield">
+                                <IconButton onClick={reduceItem}>
+                                    <RemoveIcon />
+                                </IconButton>
+                                {count}
+                                <IconButton onClick={addItem}>
+                                    <AddIcon />
+                                </IconButton>
+                            </div>
+                            <img src={image} alt="icon" />
+                        </div>
+                    </ListItem>
+                    <Divider />
+                    <ListItem  divider>
                     <div className="product">
-                        <div className="lefttext">
-                            <p id="title">Sepatu Ngabers</p>
-                            <p id="indprice">Rp900.000,-</p>
-                            <p id="variety">Color: Red, Size: 47</p>
-                            <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
-                                Delete
-                            </Button>
+                            <div className="lefttext">
+                                <p id="title">Sepatu Ngabers</p>
+                                <p id="indprice">Rp900.000,-</p>
+                                <p id="variety">Color: Red, Size: 47</p>
+                                <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
+                                    Delete
+                                </Button>
+                            </div>
+                            <div className="countfield">
+                                <IconButton onClick={reduceItem}>
+                                    <RemoveIcon />
+                                </IconButton>
+                                {count}
+                                <IconButton onClick={addItem}>
+                                    <AddIcon />
+                                </IconButton>
+                            </div>
+                            <img src={image} alt="icon" />
                         </div>
-                        <div className="countfield">
-                            <IconButton onClick={reduceItem}>
-                                <RemoveIcon />
-                            </IconButton>
-                            {count}
-                            <IconButton onClick={addItem}>
-                                <AddIcon />
-                            </IconButton>
+                    </ListItem>
+                    <ListItem >
+                    <div className="product">
+                            <div className="lefttext">
+                                <p id="title">Sepatu Ngabers</p>
+                                <p id="indprice">Rp900.000,-</p>
+                                <p id="variety">Color: Red, Size: 47</p>
+                                <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
+                                    Delete
+                                </Button>
+                            </div>
+                            <div className="countfield">
+                                <IconButton onClick={reduceItem}>
+                                    <RemoveIcon />
+                                </IconButton>
+                                {count}
+                                <IconButton onClick={addItem}>
+                                    <AddIcon />
+                                </IconButton>
+                            </div>
+                            <img src={image} alt="icon" />
                         </div>
-                        <img src={image} alt="icon" />
-                    </div>
-                </ListItem>
-                <Divider />
-                <ListItem  divider>
-                <div className="product">
-                        <div className="lefttext">
-                            <p id="title">Sepatu Ngabers</p>
-                            <p id="indprice">Rp900.000,-</p>
-                            <p id="variety">Color: Red, Size: 47</p>
-                            <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
-                                Delete
-                            </Button>
+                    </ListItem>
+                    <Divider light />
+                    <ListItem >
+                    <div className="product">
+                            <div className="lefttext">
+                                <p id="title">Sepatu Ngabers</p>
+                                <p id="indprice">Rp900.000,-</p>
+                                <p id="variety">Color: Red, Size: 47</p>
+                                <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
+                                    Delete
+                                </Button>
+                            </div>
+                            <div className="countfield">
+                                <IconButton onClick={reduceItem}>
+                                    <RemoveIcon />
+                                </IconButton>
+                                {count}
+                                <IconButton onClick={addItem}>
+                                    <AddIcon />
+                                </IconButton>
+                            </div>
+                            <img src={image} alt="icon" />
                         </div>
-                        <div className="countfield">
-                            <IconButton onClick={reduceItem}>
-                                <RemoveIcon />
-                            </IconButton>
-                            {count}
-                            <IconButton onClick={addItem}>
-                                <AddIcon />
-                            </IconButton>
-                        </div>
-                        <img src={image} alt="icon" />
-                    </div>
-                </ListItem>
-                <ListItem >
-                <div className="product">
-                        <div className="lefttext">
-                            <p id="title">Sepatu Ngabers</p>
-                            <p id="indprice">Rp900.000,-</p>
-                            <p id="variety">Color: Red, Size: 47</p>
-                            <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
-                                Delete
-                            </Button>
-                        </div>
-                        <div className="countfield">
-                            <IconButton onClick={reduceItem}>
-                                <RemoveIcon />
-                            </IconButton>
-                            {count}
-                            <IconButton onClick={addItem}>
-                                <AddIcon />
-                            </IconButton>
-                        </div>
-                        <img src={image} alt="icon" />
-                    </div>
-                </ListItem>
-                <Divider light />
-                <ListItem >
-                <div className="product">
-                        <div className="lefttext">
-                            <p id="title">Sepatu Ngabers</p>
-                            <p id="indprice">Rp900.000,-</p>
-                            <p id="variety">Color: Red, Size: 47</p>
-                            <Button variant="outlined" startIcon={<DeleteIcon color="disabled"/>}>
-                                Delete
-                            </Button>
-                        </div>
-                        <div className="countfield">
-                            <IconButton onClick={reduceItem}>
-                                <RemoveIcon />
-                            </IconButton>
-                            {count}
-                            <IconButton onClick={addItem}>
-                                <AddIcon />
-                            </IconButton>
-                        </div>
-                        <img src={image} alt="icon" />
-                    </div>
-                </ListItem>
+                    </ListItem>
                 </List>
                 <div className="total">
                     <p id="price">Rp99.999.999,-</p>

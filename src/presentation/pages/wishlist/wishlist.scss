@@ -1,0 +1,97 @@
+@import '../../../application/globals/colors.scss';
+@import '../../../application/globals/fonts.scss';
+
+$breakpoint: 768px;
+
+.wishlist {
+    display: flex;
+    flex-direction: column;
+    min-height: 78vh;
+
+    h1 {
+        margin: auto;
+        font-family: 'Montserrat';
+        font-size: 2.5rem;
+        text-align: center;
+        padding: 2rem;
+
+        @media (max-width: $breakpoint) {
+            font-size: 1.7rem;
+        }
+    }
+
+    .items {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: auto;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+
+        .product {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-between;
+            margin: 1rem;
+            align-items: center;
+
+            @media (max-width: $breakpoint) {
+                flex-direction: column;
+            }
+
+            .lefttext {
+                width: fit-content;
+                
+                @media (max-width: $breakpoint) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                #title {
+                    font-family: 'Montserrat';
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin: 0;
+
+                    @media (max-width: $breakpoint) {
+                        font-size: 1.2rem;
+                    }
+                }
+    
+                #variety {
+                    font-family: 'Montserrat';
+                    font-size: 1rem;
+                    font-weight: 500;
+                    color: $gray;
+
+                    @media (max-width: $breakpoint) {
+                        font-size: 0.8rem;
+                    }
+                }
+
+                #indprice {
+                    font-family: 'Montserrat';
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    margin: 0;
+                    color: $yellow;
+
+                    @media (max-width: $breakpoint) {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+        
+            img {
+                width: 6rem;
+                height: 6rem;
+                border-radius: 0.5rem;
+                object-fit: cover;
+                margin: 1rem;
+            }
+        }
+    }
+}
