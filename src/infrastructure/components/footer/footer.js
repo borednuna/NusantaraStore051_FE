@@ -20,23 +20,37 @@ const Footer = () => {
         </div>
 
         <div className="logos">
-          <IconButton aria-label="hobby" size="large" color="white">
-            <InstagramIcon fontSize="large" />
-          </IconButton>
+            <a href="https://www.instagram.com/hanunshaka/">
+              <IconButton aria-label="hobby" size="large" color="white">
+                <InstagramIcon fontSize="large" />
+              </IconButton>
+            </a>
 
-          <IconButton aria-label="hobby" size="large" color="white">
-            <GitHubIcon fontSize="large" />
-          </IconButton>
+          <a href="https://github.com/borednuna">
+            <IconButton aria-label="hobby" size="large" color="white">
+              <GitHubIcon fontSize="large" />
+            </IconButton>
+          </a>
 
-          <IconButton aria-label="hobby" size="large" color="white">
-            <LinkedInIcon fontSize="large" />
-          </IconButton>
+          <a href="https://www.linkedin.com/in/hanunshaka/">
+            <IconButton aria-label="hobby" size="large" color="white">
+              <LinkedInIcon fontSize="large" />
+            </IconButton>
+          </a>
         </div>
 
         <div className="contact">
-          <p>About</p>
-          <p>FAQ</p>
-          <p>Feedback</p>
+          <a href="/about">
+            <p>About</p>
+          </a>
+
+          <a href="/about">
+            <p>FAQ</p>
+          </a>
+
+          <a href="/feedback">
+            <p>Feedback</p>
+          </a>
         </div>
       </div>
     </ThemeProvider>

@@ -17,10 +17,12 @@ import SearchIcon from "@mui/icons-material/Search";
 const Header = () => {
   return (
     <div className="header">
-      <div className="logo">
-        <h1 id="nusantara">Nusantara</h1>
-        <h1 id="store">Store</h1>
-      </div>
+      <a href="/">
+        <div className="logo">
+          <h1 id="nusantara">Nusantara</h1>
+          <h1 id="store">Store</h1>
+        </div>
+      </a>
 
       <ThemeProvider theme={Theme}>
         <div className="search">
@@ -46,17 +48,23 @@ const Header = () => {
       </ThemeProvider>
 
       <div className="buttons">
+        <a href="/wishlist">
           <Button variant="contained" startIcon={<BookmarksIcon />}>
             <p>Wishlist</p>
           </Button>
+        </a>
 
+        <a href="/cart">
           <Button variant="contained" startIcon={<ShoppingCartIcon />}>
             <p>Cart</p>
           </Button>
+        </a>
 
+        <a href="/profile">
           <Button variant="contained" startIcon={<LoginIcon />}>
             <p>Login</p>
           </Button>
+        </a>
       </div>
     </div>
   );

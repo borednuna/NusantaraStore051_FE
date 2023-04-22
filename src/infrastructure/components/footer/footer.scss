@@ -67,6 +67,7 @@ $breakpoint: 768px;
         display: flex;
         flex-direction: row;
         padding-right: 10rem;
+        align-items: center;
 
         @media (max-width: $breakpoint) {
             padding: 0;
