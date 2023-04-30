@@ -60,7 +60,7 @@ const Header = () => {
           </Button>
         </a>
 
-        <a href="/profile">
+        <a href="/login">
           <Button variant="contained" startIcon={<LoginIcon />}>
             <p>Login</p>
           </Button>

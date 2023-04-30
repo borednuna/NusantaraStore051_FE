@@ -8,6 +8,8 @@ import Cart from "../../presentation/pages/cart/cart";
 import Wishlist from "../../presentation/pages/wishlist/wishlist";
 import Profile from "../../presentation/pages/profile_page/profile_page";
 import ProductDetails from "../../presentation/pages/product_details/product_details";
+import Login from "../../presentation/pages/authentication/login";
+import Signup from "../../presentation/pages/authentication/signup";
 
 const Webroutes = () => {
     return (
@@ -20,6 +22,8 @@ const Webroutes = () => {
           <Route path='/wishlist' element={<Wishlist />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/productdetails' element={<ProductDetails />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
         </Routes>
       </Router>
     );
