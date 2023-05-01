@@ -1,13 +1,13 @@
-import React from "react";
-import { useState } from "react";
-import "./price_tag.scss";
+import React from 'react';
+import { useState } from 'react';
+import './price_tag.scss';
 
-import Button from "@mui/material/Button";
-import IconButton from "@mui/material/IconButton";
-import RemoveIcon from "@mui/icons-material/Remove";
-import AddIcon from "@mui/icons-material/Add";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import Button from '@mui/material/Button';
+import IconButton from '@mui/material/IconButton';
+import RemoveIcon from '@mui/icons-material/Remove';
+import AddIcon from '@mui/icons-material/Add';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 const PriceTag = () => {
   const [count, setCount] = useState(0);

@@ -13,10 +13,10 @@ const rootReducer = (state, action) => {
     case 'SET_USER':
       return {
         ...state,
-        user: action.payload
-      }
+        user: action.payload,
+      };
     default:
-      return state
+      return state;
   }
 };
 

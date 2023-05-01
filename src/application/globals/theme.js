@@ -1,19 +1,19 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from '@mui/material/styles';
 
 const Theme = () => {
   const theme = createTheme({
     palette: {
       yellow: {
-        main: "#FFD600",
+        main: '#FFD600',
       },
       black: {
-        main: "#000000",
+        main: '#000000',
       },
       white: {
-        main: "#ffffff",
+        main: '#ffffff',
       },
       grey: {
-        main: "#858585",
+        main: '#858585',
       },
     },
   });

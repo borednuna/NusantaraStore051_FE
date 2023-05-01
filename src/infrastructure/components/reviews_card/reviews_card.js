@@ -1,19 +1,19 @@
-import React from "react";
-import "./reviews_card.scss";
+import React from 'react';
+import './reviews_card.scss';
 
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import StarIcon from "@mui/icons-material/Star";
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import StarIcon from '@mui/icons-material/Star';
 
 const ReviewsCard = () => {
   return (
     <div className="reviewscard">
       <h1>Reviews(50)</h1>
       <div className="individual-cards">
-        <AccountCircleIcon fontSize="large" sx={{ margin: "1rem" }} />
+        <AccountCircleIcon fontSize="large" sx={{ margin: '1rem' }} />
         <div className="text">
           <h2>Bunda Corla</h2>
           <h3>
-            <StarIcon fontSize="small" sx={{ color: "#FFD600" }} />
+            <StarIcon fontSize="small" sx={{ color: '#FFD600' }} />
             3.5
           </h3>
           <p>
@@ -24,11 +24,11 @@ const ReviewsCard = () => {
       </div>
 
       <div className="individual-cards">
-        <AccountCircleIcon fontSize="large" sx={{ margin: "1rem" }} />
+        <AccountCircleIcon fontSize="large" sx={{ margin: '1rem' }} />
         <div className="text">
           <h2>Bunda Corla</h2>
           <h3>
-            <StarIcon fontSize="small" sx={{ color: "#FFD600" }} />
+            <StarIcon fontSize="small" sx={{ color: '#FFD600' }} />
             3.5
           </h3>
           <p>
@@ -39,11 +39,11 @@ const ReviewsCard = () => {
       </div>
 
       <div className="individual-cards">
-        <AccountCircleIcon fontSize="large" sx={{ margin: "1rem" }} />
+        <AccountCircleIcon fontSize="large" sx={{ margin: '1rem' }} />
         <div className="text">
           <h2>Bunda Corla</h2>
           <h3>
-            <StarIcon fontSize="small" sx={{ color: "#FFD600" }} />
+            <StarIcon fontSize="small" sx={{ color: '#FFD600' }} />
             3.5
           </h3>
           <p>

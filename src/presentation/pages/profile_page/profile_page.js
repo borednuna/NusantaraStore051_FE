@@ -1,24 +1,24 @@
-import React from "react";
-import { useState } from "react";
-import "./profile_page.scss";
+import React from 'react';
+import { useState } from 'react';
+import './profile_page.scss';
 
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Typography from "@mui/material/Typography";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
-import Button from "@mui/material/Button";
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
+import Button from '@mui/material/Button';
 
 const ProfilePage = () => {
-  const [gender, setGender] = useState("female");
+  const [gender, setGender] = useState('female');
   const [tabs, setTabs] = useState(0);
   const [startDate, setStartDate] = useState(new Date());
 
@@ -53,7 +53,7 @@ const ProfilePage = () => {
   const a11yProps = (index) => {
     return {
       id: `simple-tab-${index}`,
-      "aria-controls": `simple-tabpanel-${index}`,
+      'aria-controls': `simple-tabpanel-${index}`,
     };
   };
 
@@ -61,7 +61,7 @@ const ProfilePage = () => {
     <div className="profilepage">
       <h1>My Profile</h1>
       <Box className="boxcontainer">
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
           <Tabs
             value={tabs}
             onChange={handleChangeTabs}
@@ -82,27 +82,27 @@ const ProfilePage = () => {
               placeholder="Username"
               variant="filled"
               size="small"
-              sx={{ margin: "0.5rem" }}
+              sx={{ margin: '0.5rem' }}
             />
             <TextField
               hiddenLabel
               placeholder="User Nickname"
               size="small"
-              sx={{ margin: "0.5rem" }}
+              sx={{ margin: '0.5rem' }}
             />
             <TextField
               hiddenLabel
               placeholder="Email"
               size="small"
-              sx={{ margin: "0.5rem" }}
+              sx={{ margin: '0.5rem' }}
             />
             <TextField
               hiddenLabel
               placeholder="Phone Number"
               size="small"
-              sx={{ margin: "0.5rem" }}
+              sx={{ margin: '0.5rem' }}
             />
-            <FormControl sx={{ margin: "0.5rem" }}>
+            <FormControl sx={{ margin: '0.5rem' }}>
               <FormLabel id="demo-row-radio-buttons-group-label">
                 Gender
               </FormLabel>
@@ -125,9 +125,9 @@ const ProfilePage = () => {
                 />
               </RadioGroup>
             </FormControl>
-            <p sx={{ margin: "0.5rem" }}>Date of birth</p>
+            <p sx={{ margin: '0.5rem' }}>Date of birth</p>
             <DatePicker
-              sx={{ margin: "0.5rem" }}
+              sx={{ margin: '0.5rem' }}
               selected={startDate}
               onChange={(date) => setStartDate(date)}
             />

@@ -1,12 +1,12 @@
-import React from "react";
-import "./product_details.scss";
+import React from 'react';
+import './product_details.scss';
 
-import Gallery from "../../../infrastructure/components/gallery/gallery";
-import ProductHeader from "../../../infrastructure/components/product_header/product_header";
-import PriceTag from "../../../infrastructure/components/price_tag/price_tag";
-import SellerCard from "../../../infrastructure/components/seller_card/seller_card";
-import ReviewsCard from "../../../infrastructure/components/reviews_card/reviews_card";
-import CardCarousel from "../../../infrastructure/components/card_carousel/card_carousel";
+import Gallery from '../../../infrastructure/components/gallery/gallery';
+import ProductHeader from '../../../infrastructure/components/product_header/product_header';
+import PriceTag from '../../../infrastructure/components/price_tag/price_tag';
+import SellerCard from '../../../infrastructure/components/seller_card/seller_card';
+import ReviewsCard from '../../../infrastructure/components/reviews_card/reviews_card';
+import CardCarousel from '../../../infrastructure/components/card_carousel/card_carousel';
 
 const ProductDetails = () => {
   return (

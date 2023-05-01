@@ -1,13 +1,13 @@
-import React from "react";
-import "./landing_page.scss";
+import React from 'react';
+import './landing_page.scss';
 
-import MouseIcon from "@mui/icons-material/Mouse";
-import Button from "@mui/material/Button";
+import MouseIcon from '@mui/icons-material/Mouse';
+import Button from '@mui/material/Button';
 
-import Banner from "../../../infrastructure/components/banner/banner";
-import CategoryList from "../../../infrastructure/components/category_list/category_list";
-import CardCarousel from "../../../infrastructure/components/card_carousel/card_carousel";
-import Card from "../../../infrastructure/components/card/card";
+import Banner from '../../../infrastructure/components/banner/banner';
+import CategoryList from '../../../infrastructure/components/category_list/category_list';
+import CardCarousel from '../../../infrastructure/components/card_carousel/card_carousel';
+import Card from '../../../infrastructure/components/card/card';
 
 const LandingPage = () => {
   return (
@@ -21,7 +21,7 @@ const LandingPage = () => {
       <h1>Browse by category</h1>
       <CategoryList />
       <h1>Or scroll down to find more</h1>
-      <MouseIcon fontSize="large" sx={{ margin: "auto" }} />
+      <MouseIcon fontSize="large" sx={{ margin: 'auto' }} />
 
       <section id="onsale">
         <p id="subtitle-onsale">On Sale</p>

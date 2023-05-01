@@ -1,16 +1,16 @@
-import React from "react";
-import "./product_header.scss";
+import React from 'react';
+import './product_header.scss';
 
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-import StarIcon from "@mui/icons-material/Star";
+import StarIcon from '@mui/icons-material/Star';
 
 const ProductHeader = () => {
-  const [color, setColor] = React.useState("");
-  const [size, setSize] = React.useState("");
+  const [color, setColor] = React.useState('');
+  const [size, setSize] = React.useState('');
 
   const handleChangeColor = (event) => {
     setColor(event.target.value);
@@ -28,14 +28,14 @@ const ProductHeader = () => {
 
       <div className="rating">
         <p>
-          <StarIcon fontSize="small" sx={{ color: "#FFD600" }} />
+          <StarIcon fontSize="small" sx={{ color: '#FFD600' }} />
           3.5
         </p>
         <p>Terjual 1975 kali</p>
       </div>
 
       <div className="formcontrol">
-        <FormControl sx={{ m: 1, width: "100%" }} size="small">
+        <FormControl sx={{ m: 1, width: '100%' }} size="small">
           <InputLabel id="selectcolor">Color</InputLabel>
           <Select
             labelId="selectcolor-label"
@@ -54,7 +54,7 @@ const ProductHeader = () => {
           </Select>
         </FormControl>
 
-        <FormControl sx={{ m: 1, width: "100%" }} size="small">
+        <FormControl sx={{ m: 1, width: '100%' }} size="small">
           <InputLabel id="selectsize">Size</InputLabel>
           <Select
             labelId="selectsize-label"

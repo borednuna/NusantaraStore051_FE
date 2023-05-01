@@ -1,12 +1,12 @@
-import React from "react";
-import "./gallery.scss";
-import { useRef, useEffect } from "react";
-import { register } from "swiper/element/bundle";
+import React from 'react';
+import './gallery.scss';
+import { useRef, useEffect } from 'react';
+import { register } from 'swiper/element/bundle';
 
-import image1 from "../../../presentation/resources/jaizer-capangpangan-2Xhv5zrTLN0-unsplash.jpg";
-import image2 from "../../../presentation/resources/mocno-fotografia-nzYcN7Vz9BI-unsplash.jpg";
-import image3 from "../../../presentation/resources/omar-prestwich-mBjrF0MK6mc-unsplash.jpg";
-import image4 from "../../../presentation/resources/road-trip-with-raj-rYOSMioTHXg-unsplash.jpg";
+import image1 from '../../../presentation/resources/jaizer-capangpangan-2Xhv5zrTLN0-unsplash.jpg';
+import image2 from '../../../presentation/resources/mocno-fotografia-nzYcN7Vz9BI-unsplash.jpg';
+import image3 from '../../../presentation/resources/omar-prestwich-mBjrF0MK6mc-unsplash.jpg';
+import image4 from '../../../presentation/resources/road-trip-with-raj-rYOSMioTHXg-unsplash.jpg';
 
 register();
 
@@ -15,7 +15,7 @@ const Gallery = () => {
 
   useEffect(() => {
     // listen for Swiper events using addEventListener
-    swiperElRef.current.addEventListener("progress", (e) => {
+    swiperElRef.current.addEventListener('progress', (e) => {
       // eslint-disable-next-line
       const [swiper, progress] = e.detail;
     });

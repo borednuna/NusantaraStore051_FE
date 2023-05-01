@@ -1,9 +1,9 @@
-import React from "react";
-import "./card_carousel.scss";
-import Card from "../card/card";
+import React from 'react';
+import './card_carousel.scss';
+import Card from '../card/card';
 
-import { useRef, useEffect, useState } from "react";
-import { register } from "swiper/element/bundle";
+import { useRef, useEffect, useState } from 'react';
+import { register } from 'swiper/element/bundle';
 
 register();
 
@@ -19,16 +19,16 @@ const CardCarousel = () => {
       }
     }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const swiperElRef = useRef(null);
 
   useEffect(() => {
     // listen for Swiper events using addEventListener
-    swiperElRef.current.addEventListener("progress", (e) => {
+    swiperElRef.current.addEventListener('progress', (e) => {
       // eslint-disable-next-line
       const [swiper, progress] = e.detail;
     });

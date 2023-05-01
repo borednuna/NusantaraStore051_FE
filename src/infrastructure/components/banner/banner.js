@@ -1,6 +1,6 @@
-import React from "react";
-import "./banner.scss";
-import BannerImg from "../../../presentation/resources/pexels-gustavo-fring-4173174.jpg";
+import React from 'react';
+import './banner.scss';
+import BannerImg from '../../../presentation/resources/pexels-gustavo-fring-4173174.jpg';
 
 const Banner = () => {
   return (

@@ -1,12 +1,12 @@
-import React from "react";
-import Theme from "../../../application/globals/theme";
-import { ThemeProvider } from "@mui/material/styles";
-import "./footer.scss";
+import React from 'react';
+import Theme from '../../../application/globals/theme';
+import { ThemeProvider } from '@mui/material/styles';
+import './footer.scss';
 
-import IconButton from "@mui/material/IconButton";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import IconButton from '@mui/material/IconButton';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Footer = () => {
   return (
@@ -20,11 +20,11 @@ const Footer = () => {
         </div>
 
         <div className="logos">
-            <a href="https://www.instagram.com/hanunshaka/">
-              <IconButton aria-label="hobby" size="large" color="white">
-                <InstagramIcon fontSize="large" />
-              </IconButton>
-            </a>
+          <a href="https://www.instagram.com/hanunshaka/">
+            <IconButton aria-label="hobby" size="large" color="white">
+              <InstagramIcon fontSize="large" />
+            </IconButton>
+          </a>
 
           <a href="https://github.com/borednuna">
             <IconButton aria-label="hobby" size="large" color="white">

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "./chat.scss";
+import React, { useState, useEffect } from 'react';
+import './chat.scss';
 
-import Fab from "@mui/material/Fab";
-import ChatIcon from "@mui/icons-material/Chat";
-import Drawer from "@mui/material/Drawer";
+import Fab from '@mui/material/Fab';
+import ChatIcon from '@mui/icons-material/Chat';
+import Drawer from '@mui/material/Drawer';
 
 const ChatFab = () => {
   const [state, setState] = useState(false);
@@ -18,20 +18,20 @@ const ChatFab = () => {
       }
     }
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const drawerContentDesktop = (
     <div
       style={{
-        width: "30vw",
-        height: "100vh",
-        display: "flex",
+        width: '30vw',
+        height: '100vh',
+        display: 'flex',
       }}
     >
-      <p style={{ margin: "auto", textAlign: "center" }}>
+      <p style={{ margin: 'auto', textAlign: 'center' }}>
         This is a preview for the upcoming chatbox
       </p>
     </div>
@@ -40,12 +40,12 @@ const ChatFab = () => {
   const drawerContentMobile = (
     <div
       style={{
-        width: "90vw",
-        height: "100vh",
-        display: "flex",
+        width: '90vw',
+        height: '100vh',
+        display: 'flex',
       }}
     >
-      <p style={{ margin: "auto", textAlign: "center" }}>
+      <p style={{ margin: 'auto', textAlign: 'center' }}>
         This is a preview for the upcoming chatbox
       </p>
     </div>
@@ -53,8 +53,8 @@ const ChatFab = () => {
 
   const toggleDrawer = (open) => (event) => {
     if (
-      event.type === "keydown" &&
-      (event.key === "Tab" || event.key === "Shift")
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
     ) {
       return;
     }
