@@ -1,5 +1,6 @@
 import React from 'react';
 import Theme from '../../../application/globals/theme';
+import { useSelector } from 'react-redux';
 import './header.scss';
 
 import { ThemeProvider } from '@mui/material/styles';
@@ -15,6 +16,8 @@ import BookmarksIcon from '@mui/icons-material/Bookmarks';
 import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
+  const sessionUser = useSelector((state) => state.user);
+  console.log(sessionUser);
   return (
     <div className="header">
       <a href="/">
@@ -60,12 +63,19 @@ const Header = () => {
           </Button>
         </a>
 
-        <a href="/login">
-          <Button variant="contained" startIcon={<LoginIcon />}>
-            {/* {Object.keys(user).length == 0 ? <p>login</p> : <p>profile</p>} */}
-            <p>login</p>
-          </Button>
-        </a>
+        {sessionUser === undefined || sessionUser === null ? (
+          <a href="/login">
+            <Button variant="contained" startIcon={<LoginIcon />}>
+              <p>login</p>
+            </Button>
+          </a>
+        ) : (
+          <a href="/profile">
+            <Button variant="contained" startIcon={<LoginIcon />}>
+              <p>profile</p>
+            </Button>
+          </a>
+        )}
       </div>
     </div>
   );

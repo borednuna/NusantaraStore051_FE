@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import './login.scss';
 
 import TextField from '@mui/material/TextField';
@@ -7,8 +7,8 @@ import Button from '@mui/material/Button';
 
 const Login = () => {
   const dispatch = useDispatch();
-  const myVar = useSelector((state) => state.user);
-  console.log(myVar);
+  // const sessionUser = useSelector((state) => state.user);
+  // console.log(sessionUser);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [data, setData] = useState({
@@ -40,9 +40,11 @@ const Login = () => {
     })
       .then((response) => response.text())
       .then((result) => {
-        // setData(JSON.parse(result));
-        dispatch({ type: 'SET_USER', payload: JSON.parse(result) });
-        console.log(result);
+        if (result === 'Unauthorized' || result === 'Bad Request') {
+          dispatch({ type: 'SET_USER', payload: {} });
+        } else {
+          dispatch({ type: 'SET_USER', payload: JSON.parse(result) });
+        }
       })
       .catch((error) => console.error(error));
   };

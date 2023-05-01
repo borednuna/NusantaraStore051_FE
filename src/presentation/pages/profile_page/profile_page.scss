@@ -24,36 +24,42 @@ $breakpoint: 768px;
             display: flex;
             flex-direction: column;
 
-            Button {
-                margin: auto;
-                color: $black;
-                background-color: $white;
-                border: 0;
-                border-radius: 0;
-                cursor: pointer;
-                box-shadow: none;
-                border-radius: 1.5rem;
-                height: 3rem;
-                
-                @media (max-width: $breakpoint) {
-                    height: 1.5rem;
-                    font-size: 0.5rem;
-                }
-        
-                p {
-                    font-family: 'Montserrat';
-                    font-size: 1rem;
-                    font-weight: 600;
-        
-                    @media (max-width: $breakpoint) {
-                        font-size: 0.7rem;
-                    }
-                }
-        
-                &:hover {
-                    background-color: $yellow;
-                    color: $white;
+            .button-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                Button {
+                    margin: auto;
+                    color: $black;
+                    background-color: $white;
+                    border: 0;
+                    border-radius: 0;
+                    cursor: pointer;
                     box-shadow: none;
+                    border-radius: 1.5rem;
+                    height: 3rem;
+                    
+                    @media (max-width: $breakpoint) {
+                        height: 1.5rem;
+                        font-size: 0.5rem;
+                    }
+            
+                    p {
+                        font-family: 'Montserrat';
+                        font-size: 1rem;
+                        font-weight: 600;
+            
+                        @media (max-width: $breakpoint) {
+                            font-size: 0.7rem;
+                        }
+                    }
+            
+                    &:hover {
+                        background-color: $yellow;
+                        color: $white;
+                        box-shadow: none;
+                    }
                 }
             }
         }

@@ -15,6 +15,11 @@ const rootReducer = (state, action) => {
         ...state,
         user: action.payload,
       };
+    case 'LOGOUT':
+      return {
+        ...state,
+        user: undefined,
+      };
     default:
       return state;
   }
