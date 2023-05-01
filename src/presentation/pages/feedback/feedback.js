@@ -27,7 +27,6 @@ const Feedback = () => {
   };
 
   const handleInputChange = (event) => {
-    console.log(inputValue);
     setInputValue(event.target.value);
   };
 

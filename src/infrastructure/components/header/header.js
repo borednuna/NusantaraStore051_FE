@@ -62,7 +62,8 @@ const Header = () => {
 
         <a href="/login">
           <Button variant="contained" startIcon={<LoginIcon />}>
-            <p>Login</p>
+            {/* {Object.keys(user).length == 0 ? <p>login</p> : <p>profile</p>} */}
+            <p>login</p>
           </Button>
         </a>
       </div>

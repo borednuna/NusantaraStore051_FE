@@ -18,11 +18,6 @@ const Gallery = () => {
     swiperElRef.current.addEventListener("progress", (e) => {
       // eslint-disable-next-line
       const [swiper, progress] = e.detail;
-      console.log(progress);
-    });
-
-    swiperElRef.current.addEventListener("slidechange", (e) => {
-      console.log("slide changed");
     });
   }, []);
 
