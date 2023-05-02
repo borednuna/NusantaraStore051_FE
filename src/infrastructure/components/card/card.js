@@ -36,7 +36,7 @@ const Card = (props) => {
   return (
     item === undefined ? <div></div> :
     <div className="card">
-      <a href="/productdetails">
+      <a href={'productdetails/' + item.id}>
         <img src={image[0] === undefined ? cover : image[0].url} alt="Cover for product" />
         <p id="category">{item.category}</p>
         <p id="name">{item.name}</p>

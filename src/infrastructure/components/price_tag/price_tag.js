@@ -29,6 +29,10 @@ const PriceTag = (props) => {
   };
 
   const getWishlistId = () => {
+    if (user === undefined) {
+      return;
+    }
+
     const url = 'http://localhost:3001/wishlists/user/' + user.id;
     fetch(url, {
       method: 'GET',
@@ -41,6 +45,10 @@ const PriceTag = (props) => {
   };
 
   const sendToWishlist = () => {
+    if (user === undefined) {
+      return;
+    }
+
     const url = 'http://localhost:3001/detailed_wishlists/';
     fetch(url, {
       method: 'POST',
@@ -80,7 +88,9 @@ const PriceTag = (props) => {
       <div className="buttons">
         <div className="wishlist" onClick={sendToWishlist}>
           <Button variant="contained" startIcon={<BookmarksIcon />}>
-            <p>Add to wishlist</p>
+            <p>
+              Add to wishlist
+            </p>
           </Button>
         </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -32,10 +32,15 @@ function App() {
       .catch((error) => console.error(error));
   };
 
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  console.log(products);
+
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className="App" onLoad={fetchProducts}>
+        <div className="App">
           <Router>
             <Chat />
             <Header />
@@ -49,6 +54,12 @@ function App() {
               <Route path="/productdetails" element={<ProductDetails props={products[0]} />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              {
+                products === undefined || Object.keys(products).length === 0 ? null :
+                products.map((product) => (
+                  <Route path={'/productdetails/' + product.id} element={<ProductDetails props={product} />} />
+                ))
+              }
             </Routes>
             <Footer />
           </Router>
