@@ -63,7 +63,7 @@ const Header = () => {
           </Button>
         </a>
 
-        {sessionUser === undefined || sessionUser === null ? (
+        {sessionUser === undefined || sessionUser === null || Object.keys(sessionUser).length === 0 ? (
           <a href="/login">
             <Button variant="contained" startIcon={<LoginIcon />}>
               <p>login</p>

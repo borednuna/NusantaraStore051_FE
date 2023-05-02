@@ -6,6 +6,22 @@ import StarIcon from '@mui/icons-material/Star';
 
 const Card = (props) => {
   const [item, setItem] = useState({});
+  const [image, setImage] = useState([]);
+
+  const fetchImage = () => {
+    if (item === undefined) {
+      return;
+    }
+    const url = 'http://localhost:3001/images/' + item.id;
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setImage(result.data)
+      })
+      .catch((error) => console.error(error));
+  }
 
   useEffect(() => {
     if (props !== undefined && Object.keys(props).length !== 0) {
@@ -13,11 +29,15 @@ const Card = (props) => {
     }
   }, [props]);
 
+  useEffect(() => {
+    fetchImage();
+  }, [item]);
+
   return (
     item === undefined ? <div></div> :
     <div className="card">
       <a href="/productdetails">
-        <img src={cover} alt="Cover for product" />
+        <img src={image[0] === undefined ? cover : image[0].url} alt="Cover for product" />
         <p id="category">{item.category}</p>
         <p id="name">{item.name}</p>
         <p id="price"></p>

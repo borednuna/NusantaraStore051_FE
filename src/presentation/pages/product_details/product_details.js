@@ -55,7 +55,6 @@ const ProductDetails = (props) => {
       .then((response) => response.json())
       .then((result) => {
         setImages(result.data)
-        console.log(images);
       })
       .catch((error) => console.error(error));
   }

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import './price_tag.scss';
 
 import Button from '@mui/material/Button';
@@ -10,6 +11,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
 const PriceTag = (props) => {
+  const user = useSelector((state) => state.user);
+  const [wishlistId, setWishlistId] = useState(0);
   const [item, setItem] = useState(props.props);
   const [count, setCount] = useState(0);
 
@@ -24,6 +27,38 @@ const PriceTag = (props) => {
   const addItem = () => {
     setCount(count + 1);
   };
+
+  const getWishlistId = () => {
+    const url = 'http://localhost:3001/wishlists/user/' + user.id;
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setWishlistId(result.data.id)
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const sendToWishlist = () => {
+    const url = 'http://localhost:3001/detailed_wishlists/';
+    fetch(url, {
+      method: 'POST',
+      body: JSON.stringify({
+        wishlist_id: wishlistId,
+        product_id: item.id,
+      }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .catch((error) => console.error(error));
+  }
+
+  useEffect(() => {
+    getWishlistId();
+  }, [user])
 
   return (
     <div className="pricetag">
@@ -43,7 +78,7 @@ const PriceTag = (props) => {
       </div>
 
       <div className="buttons">
-        <div className="wishlist">
+        <div className="wishlist" onClick={sendToWishlist}>
           <Button variant="contained" startIcon={<BookmarksIcon />}>
             <p>Add to wishlist</p>
           </Button>
