@@ -17,7 +17,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 const Header = () => {
   const sessionUser = useSelector((state) => state.user);
-  console.log(sessionUser);
+
   return (
     <div className="header">
       <a href="/">

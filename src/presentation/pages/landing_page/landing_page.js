@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './landing_page.scss';
 
 import MouseIcon from '@mui/icons-material/Mouse';
@@ -9,7 +9,33 @@ import CategoryList from '../../../infrastructure/components/category_list/categ
 import CardCarousel from '../../../infrastructure/components/card_carousel/card_carousel';
 import Card from '../../../infrastructure/components/card/card';
 
-const LandingPage = () => {
+const LandingPage = (props) => {
+  const getFeaturedProducts = () => {
+    const featuredProducts = [];
+    for (let i = 0; i < 5; i++) {
+      featuredProducts.push(props.props[i]);
+    }
+    return featuredProducts;
+  };
+
+  const getDisplayedAllProducts = () => {
+    const displayedAllProducts = [];
+    for (let i = 0; i < 8; i++) {
+      displayedAllProducts.push(props.props[i]);
+    }
+    return displayedAllProducts;
+  }
+
+  const [allProducts, setAllProducts] = useState(getDisplayedAllProducts());
+  const [featuredProducts, setFeaturedProducts] = useState(getFeaturedProducts());
+
+  useEffect(() => {
+    if (props !== undefined) {
+      setFeaturedProducts(getFeaturedProducts());
+      setAllProducts(getDisplayedAllProducts());
+    }
+  }, [props]);
+
   return (
     <div className="landingpage">
       <div className="logo">
@@ -26,13 +52,13 @@ const LandingPage = () => {
       <section id="onsale">
         <p id="subtitle-onsale">On Sale</p>
         <div className="carousel-onsale">
-          <CardCarousel />
+          <CardCarousel props={featuredProducts} />
         </div>
       </section>
 
       <section id="featured">
         <div className="carousel-featured">
-          <CardCarousel />
+          <CardCarousel props={featuredProducts} />
         </div>
         <p id="subtitle-featured">Featured Products</p>
       </section>
@@ -40,22 +66,14 @@ const LandingPage = () => {
       <section id="allproducts">
         <p className="allproducttext">All Products</p>
         <div className="cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          {
+            props === undefined || Object.keys(props.props).length === 0 ? <div></div> :
+            allProducts.map((item, index) => {
+              return (
+                <Card props={item} key={index} />
+              );
+            })
+          }
         </div>
         <Button variant="outlined">Load More</Button>
       </section>

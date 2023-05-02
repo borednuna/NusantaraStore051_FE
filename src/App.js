@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -19,21 +19,34 @@ import Login from './presentation/pages/authentication/login';
 import Signup from './presentation/pages/authentication/signup';
 
 function App() {
+  const [products, setProducts] = useState({});
+  const fetchProducts = () => {
+    const url = 'http://localhost:3001/products';
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setProducts(result.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className="App">
+        <div className="App" onLoad={fetchProducts}>
           <Router>
             <Chat />
             <Header />
             <Routes>
-              <Route path="/" element={<LandingPage />} />
+              <Route path="/" element={<LandingPage props={products} />} />
               <Route path="/about" element={<About />} />
               <Route path="/feedback" element={<Feedback />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/productdetails" element={<ProductDetails />} />
+              <Route path="/productdetails" element={<ProductDetails props={products[0]} />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
             </Routes>

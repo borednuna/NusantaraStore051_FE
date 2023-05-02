@@ -7,9 +7,28 @@ import { register } from 'swiper/element/bundle';
 
 register();
 
-const CardCarousel = () => {
+const CardCarousel = (props) => {
+  const [items, setItems] = useState({})
   const [view, setView] = useState(3);
+  const [card1, setCard1] = useState({});
+  const [card2, setCard2] = useState({});
+  const [card3, setCard3] = useState({});
+  const [card4, setCard4] = useState({});
+  const [card5, setCard5] = useState({});
 
+  useEffect(() => {
+    if (props === undefined || Object.keys(props).length === 0) {
+      setItems(items);
+    } else {
+      setItems(props.props);
+      setCard1(props.props[0]);
+      setCard2(props.props[1]);
+      setCard3(props.props[2]);
+      setCard4(props.props[3]);
+      setCard5(props.props[4]);
+    }
+  }, [props])
+  
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {
@@ -46,25 +65,19 @@ const CardCarousel = () => {
         autoplay="true"
       >
         <swiper-slide>
-          <Card />
+          <Card props={card1} />
         </swiper-slide>
         <swiper-slide>
-          <Card />
+          <Card props={card2} />
         </swiper-slide>
         <swiper-slide>
-          <Card />
+          <Card props={card3} />
         </swiper-slide>
         <swiper-slide>
-          <Card />
+          <Card props={card4} />
         </swiper-slide>
         <swiper-slide>
-          <Card />
-        </swiper-slide>
-        <swiper-slide>
-          <Card />
-        </swiper-slide>
-        <swiper-slide>
-          <Card />
+          <Card props={card5} />
         </swiper-slide>
       </swiper-container>
     </div>

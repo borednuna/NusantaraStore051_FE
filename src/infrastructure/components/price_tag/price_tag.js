@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react';
 import './price_tag.scss';
 
@@ -9,8 +9,13 @@ import AddIcon from '@mui/icons-material/Add';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import BookmarksIcon from '@mui/icons-material/Bookmarks';
 
-const PriceTag = () => {
+const PriceTag = (props) => {
+  const [item, setItem] = useState(props.props);
   const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    setItem(props.props);
+  }, [props.props]);
 
   const reduceItem = () => {
     count <= 0 ? setCount(0) : setCount(count - 1);
@@ -23,8 +28,8 @@ const PriceTag = () => {
   return (
     <div className="pricetag">
       <div className="prices">
-        <h1>Rp9.999.999,-</h1>
-        <h2>Rp900.000,-</h2>
+        <h1></h1>
+        <h2>{item === undefined ? '' : 'Rp' + item.price + ',-'}</h2>
       </div>
 
       <div className="countfield">
