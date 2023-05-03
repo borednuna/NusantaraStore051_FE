@@ -8,7 +8,7 @@ import { register } from 'swiper/element/bundle';
 register();
 
 const CardCarousel = (props) => {
-  const [items, setItems] = useState({})
+  const [items, setItems] = useState({});
   const [view, setView] = useState(3);
   const [card1, setCard1] = useState({});
   const [card2, setCard2] = useState({});
@@ -27,8 +27,8 @@ const CardCarousel = (props) => {
       setCard4(props.props[3]);
       setCard5(props.props[4]);
     }
-  }, [props])
-  
+  }, [props]);
+
   useEffect(() => {
     function handleResize() {
       if (window.innerWidth < 768) {

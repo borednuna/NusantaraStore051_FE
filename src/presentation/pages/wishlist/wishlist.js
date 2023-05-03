@@ -28,11 +28,9 @@ const Wishlist = () => {
 
   useEffect(() => {
     getWishlistId();
-  }, [user])
+  }, [user]);
 
-  const fetchItems = () => {
-    
-  }
+  const fetchItems = () => {};
 
   return (
     <div className="wishlist">

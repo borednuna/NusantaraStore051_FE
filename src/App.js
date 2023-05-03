@@ -50,15 +50,20 @@ function App() {
               <Route path="/cart" element={<Cart />} />
               <Route path="/wishlist" element={<Wishlist />} />
               <Route path="/profile" element={<Profile />} />
-              <Route path="/productdetails" element={<ProductDetails props={products[0]} />} />
+              <Route
+                path="/productdetails"
+                element={<ProductDetails props={products[0]} />}
+              />
               <Route path="/login" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
-              {
-                products === undefined || Object.keys(products).length === 0 ? null :
-                products.map((product) => (
-                  <Route path={'/productdetails/' + product.id} element={<ProductDetails props={product} />} />
-                ))
-              }
+              {products === undefined || Object.keys(products).length === 0
+                ? null
+                : products.map((product) => (
+                    <Route
+                      path={'/productdetails/' + product.id}
+                      element={<ProductDetails props={product} />}
+                    />
+                  ))}
             </Routes>
             <Footer />
           </Router>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import './card.scss';
 import cover from '../../../presentation/resources/mocno-fotografia-nzYcN7Vz9BI-unsplash.jpg';
 
@@ -18,10 +18,10 @@ const Card = (props) => {
     })
       .then((response) => response.json())
       .then((result) => {
-        setImage(result.data)
+        setImage(result.data);
       })
       .catch((error) => console.error(error));
-  }
+  };
 
   useEffect(() => {
     if (props !== undefined && Object.keys(props).length !== 0) {
@@ -33,21 +33,25 @@ const Card = (props) => {
     fetchImage();
   }, [item]);
 
-  return (
-    item === undefined ? <div></div> :
+  return item === undefined ? (
+    <div></div>
+  ) : (
     <div className="card">
       <a href={'productdetails/' + item.id}>
-        <img src={image[0] === undefined ? cover : image[0].url} alt="Cover for product" />
+        <img
+          src={image[0] === undefined ? cover : image[0].url}
+          alt="Cover for product"
+        />
         <p id="category">{item.category}</p>
         <p id="name">{item.name}</p>
         <p id="price"></p>
-        <p id="final-price">{"Rp" + item.price + ",-"}</p>
+        <p id="final-price">{'Rp' + item.price + ',-'}</p>
         <div className="star-sold">
           <p id="star">
             <StarIcon sx={{ fontSize: 'small' }} />
             3.5
           </p>
-          <p id="sold">{"Sold " + item.sold + " times"}</p>
+          <p id="sold">{'Sold ' + item.sold + ' times'}</p>
         </div>
       </a>
     </div>

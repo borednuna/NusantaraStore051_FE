@@ -39,7 +39,7 @@ const PriceTag = (props) => {
     })
       .then((response) => response.json())
       .then((result) => {
-        setWishlistId(result.data.id)
+        setWishlistId(result.data.id);
       })
       .catch((error) => console.error(error));
   };
@@ -62,11 +62,11 @@ const PriceTag = (props) => {
     })
       .then((response) => response.json())
       .catch((error) => console.error(error));
-  }
+  };
 
   useEffect(() => {
     getWishlistId();
-  }, [user])
+  }, [user]);
 
   return (
     <div className="pricetag">
@@ -88,9 +88,7 @@ const PriceTag = (props) => {
       <div className="buttons">
         <div className="wishlist" onClick={sendToWishlist}>
           <Button variant="contained" startIcon={<BookmarksIcon />}>
-            <p>
-              Add to wishlist
-            </p>
+            <p>Add to wishlist</p>
           </Button>
         </div>
 

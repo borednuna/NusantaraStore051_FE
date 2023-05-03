@@ -6,12 +6,12 @@ import { register } from 'swiper/element/bundle';
 register();
 
 const Gallery = (props) => {
-  const [imageArray, setImageArray] = useState([])
+  const [imageArray, setImageArray] = useState([]);
   const swiperElRef = useRef(null);
 
   useEffect(() => {
-    setImageArray(props.props)
-  }, [props.props])
+    setImageArray(props.props);
+  }, [props.props]);
 
   useEffect(() => {
     // listen for Swiper events using addEventListener
@@ -37,7 +37,7 @@ const Gallery = (props) => {
             <swiper-slide key={index}>
               <img src={image.url} alt={image.id} />
             </swiper-slide>
-          )
+          );
         })}
       </swiper-container>
     </div>

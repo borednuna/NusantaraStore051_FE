@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './product_details.scss';
 
 import Gallery from '../../../infrastructure/components/gallery/gallery';
@@ -42,7 +42,7 @@ const ProductDetails = (props) => {
         setSeller(result.data);
       })
       .catch((error) => console.error(error));
-  }
+  };
 
   const fetchImages = () => {
     if (item === undefined) {
@@ -57,7 +57,7 @@ const ProductDetails = (props) => {
         setImages(result.data);
       })
       .catch((error) => console.error(error));
-  }
+  };
 
   useEffect(() => {
     setItem(props.props);
@@ -82,9 +82,7 @@ const ProductDetails = (props) => {
         <div className="description">
           <SellerCard props={seller} />
           <p id="subtitle">Product Description</p>
-          <p id="subtext">
-            {item === undefined ? '' : item.description}
-          </p>
+          <p id="subtext">{item === undefined ? '' : item.description}</p>
 
           <p id="subtitle">Product Details</p>
           <p id="subtext">

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './landing_page.scss';
 
 import MouseIcon from '@mui/icons-material/Mouse';
@@ -24,10 +24,12 @@ const LandingPage = (props) => {
       displayedAllProducts.push(props.props[i]);
     }
     return displayedAllProducts;
-  }
+  };
 
   const [allProducts, setAllProducts] = useState(getDisplayedAllProducts());
-  const [featuredProducts, setFeaturedProducts] = useState(getFeaturedProducts());
+  const [featuredProducts, setFeaturedProducts] = useState(
+    getFeaturedProducts()
+  );
 
   useEffect(() => {
     if (props !== undefined) {
@@ -66,14 +68,13 @@ const LandingPage = (props) => {
       <section id="allproducts">
         <p className="allproducttext">All Products</p>
         <div className="cards">
-          {
-            props === undefined || Object.keys(props.props).length === 0 ? <div></div> :
+          {props === undefined || Object.keys(props.props).length === 0 ? (
+            <div></div>
+          ) : (
             allProducts.map((item, index) => {
-              return (
-                <Card props={item} key={index} />
-              );
+              return <Card props={item} key={index} />;
             })
-          }
+          )}
         </div>
         <Button variant="outlined">Load More</Button>
       </section>

@@ -30,7 +30,7 @@ const Cart = () => {
         if (result.data.length === 0) {
           return;
         } else {
-          return ("'" + result.data[0].url + "'");
+          return "'" + result.data[0].url + "'";
         }
       })
       .catch((error) => console.error(error));
@@ -46,7 +46,7 @@ const Cart = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        setCart(result.data.id)
+        setCart(result.data.id);
       })
       .catch((error) => console.error(error));
   };
@@ -61,7 +61,7 @@ const Cart = () => {
     })
       .then((response) => response.json())
       .then((result) => {
-        setItems(result.data)
+        setItems(result.data);
       })
       .catch((error) => console.error(error));
   };
@@ -96,7 +96,7 @@ const Cart = () => {
 
   useEffect(() => {
     if (items.length !== 0) {
-      setCount(items[0].item_amount)
+      setCount(items[0].item_amount);
       getTotalPrice();
     }
   }, [items]);
@@ -106,45 +106,46 @@ const Cart = () => {
       <h1>My Cart</h1>
       <div className="listitems">
         <List component="nav" aria-label="mailbox folders">
-          {items === [] || items === undefined ? <p>Cart is empty</p>
-          :
-          items.map((item) => {
-            return (
-              <ListItem>
-                <div className="product">
-                  <div className="lefttext">
-                    <p id="title">{item.name}</p>
-                    <p id="indprice">Rp{item.price},-</p>
-                    <p id="variety">Color: Red, Size: 47</p>
-                    <Button
-                      variant="outlined"
-                      startIcon={<DeleteIcon color="disabled" />}
-                    >
-                      Delete
-                    </Button>
+          {items === [] || items === undefined ? (
+            <p>Cart is empty</p>
+          ) : (
+            items.map((item) => {
+              return (
+                <ListItem>
+                  <div className="product">
+                    <div className="lefttext">
+                      <p id="title">{item.name}</p>
+                      <p id="indprice">Rp{item.price},-</p>
+                      <p id="variety">Color: Red, Size: 47</p>
+                      <Button
+                        variant="outlined"
+                        startIcon={<DeleteIcon color="disabled" />}
+                      >
+                        Delete
+                      </Button>
+                    </div>
+                    <div className="countfield">
+                      <IconButton onClick={reduceItem}>
+                        <RemoveIcon />
+                      </IconButton>
+                      {count}
+                      <IconButton onClick={addItem}>
+                        <AddIcon />
+                      </IconButton>
+                    </div>
+                    <img src={getCoverImage(item.id)} alt="icon" />
                   </div>
-                  <div className="countfield">
-                    <IconButton onClick={reduceItem}>
-                      <RemoveIcon />
-                    </IconButton>
-                    {count}
-                    <IconButton onClick={addItem}>
-                      <AddIcon />
-                    </IconButton>
-                  </div>
-                  <img src={getCoverImage(item.id)} alt="icon" />
-                </div>
-                <Divider />
-              </ListItem>
-            )
-          })
-        }
+                  <Divider />
+                </ListItem>
+              );
+            })
+          )}
         </List>
         <div className="total">
           <p id="price">{'Rp' + totalPrice + ',-'}</p>
-            <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon />}>
-              <p>Checkout</p>
-            </Button>
+          <Button variant="contained" endIcon={<ShoppingCartCheckoutIcon />}>
+            <p>Checkout</p>
+          </Button>
         </div>
       </div>
     </div>
