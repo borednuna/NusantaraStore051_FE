@@ -63,5 +63,41 @@ $breakpoint: 768px;
                 }
             }
         }
+
+        .addresses {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80vw;
+            text-align: center;
+
+            .address {
+                border: 1px solid $yellow;
+                border-radius: 0.6rem;
+                padding: 0.5rem;
+                margin: 0.5rem;
+
+                #title {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    margin: 0;
+                    margin-bottom: 0.5rem;
+                }
+
+                #address {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+
+                #province {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+
+                #postal {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+            }
+        }
     }
 }

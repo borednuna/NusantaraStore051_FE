@@ -17,6 +17,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
+import { Divider, ListItem } from '@mui/material';
 
 const ProfilePage = () => {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const ProfilePage = () => {
   const [email, setEmail] = useState(sessionUser.email);
   const [phone, setPhone] = useState(sessionUser.phone);
   const [data, setData] = useState({ sessionUser });
-  // console.log(sessionUser);
+  const [address, setAddress] = useState([]);
 
   const handleInputName = (event) => {
     setName(event.target.value);
@@ -82,7 +83,7 @@ const ProfilePage = () => {
     })
       .then((response) => response.text())
       .then((result) => {
-        // console.log(result);
+        console.log(result);
       })
       .catch((error) => console.error(error));
   };
@@ -99,6 +100,18 @@ const ProfilePage = () => {
       .catch((error) => console.error(error));
   };
 
+  const getAllAddresses = () => {
+    const url = 'http://localhost:3001/addresses/' + sessionUser.id;
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setAddress(result.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
   const handleSubmit = () => {
     sendData();
     fetchData();
@@ -108,6 +121,10 @@ const ProfilePage = () => {
     setName(sessionUser.name);
     setEmail(sessionUser.email);
     setPhone(sessionUser.phone);
+  }, [sessionUser]);
+
+  useEffect(() => {
+    getAllAddresses();
   }, [sessionUser]);
 
   const handleLogout = () => {
@@ -260,7 +277,18 @@ const ProfilePage = () => {
           </div>
         </TabPanel>
         <TabPanel value={tabs} index={1}>
-          Addresses
+          <ListItem className='addresses'>
+            {address.map((item) => {
+              return (
+                <div className="address">
+                  <p id='title'>{item.address_name + ', ' + item.receiver_name}</p>
+                  <p id='address'>{item.street_address + ', ' + item.city}</p>
+                  <p id='province'>{item.province}</p>
+                  <p id='postal'>{item.postal_code}</p>
+                </div>
+              );
+            })}
+          </ListItem>
         </TabPanel>
         <TabPanel value={tabs} index={2}>
           Shopping History
