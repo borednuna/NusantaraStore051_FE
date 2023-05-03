@@ -126,13 +126,14 @@ $breakpoint: 768px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         padding-left: 2.5rem;
         padding-right: 2.5rem;
+        height: 8rem;
 
         @media (max-width: $breakpoint) {
             flex-direction: column;
-            height: fit-content;
+            height: 6rem;
             padding: 1rem;
         }
         
@@ -148,7 +149,6 @@ $breakpoint: 768px;
         }
 
         Button {
-            margin: auto;
             color: $black;
             background-color: $white;
             border: 0;

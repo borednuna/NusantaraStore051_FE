@@ -35,7 +35,6 @@ function App() {
   useEffect(() => {
     fetchProducts();
   }, []);
-  console.log(products);
 
   return (
     <Provider store={store}>
