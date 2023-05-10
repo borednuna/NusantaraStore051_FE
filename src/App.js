@@ -28,12 +28,14 @@ function App() {
       .then((response) => response.json())
       .then((result) => {
         setProducts(result.data);
+        console.log(result);
       })
       .catch((error) => console.error(error));
   };
 
   useEffect(() => {
     fetchProducts();
+    console.log(products);
   }, []);
 
   return (
