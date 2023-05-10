@@ -1,16 +1,23 @@
-import React from "react";
-import "./product_header.scss";
+import React, { useEffect, useState } from 'react';
+import './product_header.scss';
 
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
 
-import StarIcon from "@mui/icons-material/Star";
+import StarIcon from '@mui/icons-material/Star';
 
-const ProductHeader = () => {
-  const [color, setColor] = React.useState("");
-  const [size, setSize] = React.useState("");
+const ProductHeader = (props) => {
+  const [item, setItem] = useState({});
+  const [color, setColor] = React.useState('');
+  const [size, setSize] = React.useState('');
+
+  useEffect(() => {
+    if (props !== undefined || Object.keys(props).length !== 0) {
+      setItem(props.props);
+    }
+  }, [props]);
 
   const handleChangeColor = (event) => {
     setColor(event.target.value);
@@ -22,20 +29,20 @@ const ProductHeader = () => {
 
   return (
     <div className="productheader">
-      <h1>Sepatu Ngabers</h1>
-      <h2>Footwear</h2>
+      <h1>{item === undefined ? '' : item.name}</h1>
+      <h2>{item === undefined ? '' : item.category}</h2>
       <div className="line"></div>
 
       <div className="rating">
         <p>
-          <StarIcon fontSize="small" sx={{ color: "#FFD600" }} />
+          <StarIcon fontSize="small" sx={{ color: '#FFD600' }} />
           3.5
         </p>
-        <p>Terjual 1975 kali</p>
+        <p>{item === undefined ? '' : 'Sold ' + item.sold + ' times'}</p>
       </div>
 
       <div className="formcontrol">
-        <FormControl sx={{ m: 1, width: "100%" }} size="small">
+        <FormControl sx={{ m: 1, width: '100%' }} size="small">
           <InputLabel id="selectcolor">Color</InputLabel>
           <Select
             labelId="selectcolor-label"
@@ -54,7 +61,7 @@ const ProductHeader = () => {
           </Select>
         </FormControl>
 
-        <FormControl sx={{ m: 1, width: "100%" }} size="small">
+        <FormControl sx={{ m: 1, width: '100%' }} size="small">
           <InputLabel id="selectsize">Size</InputLabel>
           <Select
             labelId="selectsize-label"

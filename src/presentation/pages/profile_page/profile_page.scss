@@ -24,36 +24,78 @@ $breakpoint: 768px;
             display: flex;
             flex-direction: column;
 
-            Button {
-                margin: auto;
-                color: $black;
-                background-color: $white;
-                border: 0;
-                border-radius: 0;
-                cursor: pointer;
-                box-shadow: none;
-                border-radius: 1.5rem;
-                height: 3rem;
-                
-                @media (max-width: $breakpoint) {
-                    height: 1.5rem;
-                    font-size: 0.5rem;
-                }
-        
-                p {
-                    font-family: 'Montserrat';
-                    font-size: 1rem;
-                    font-weight: 600;
-        
+            .button-container {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+
+                Button {
+                    margin: auto;
+                    color: $black;
+                    background-color: $white;
+                    border: 0;
+                    border-radius: 0;
+                    cursor: pointer;
+                    box-shadow: none;
+                    border-radius: 1.5rem;
+                    height: 3rem;
+                    
                     @media (max-width: $breakpoint) {
-                        font-size: 0.7rem;
+                        height: 1.5rem;
+                        font-size: 0.5rem;
+                    }
+            
+                    p {
+                        font-family: 'Montserrat';
+                        font-size: 1rem;
+                        font-weight: 600;
+            
+                        @media (max-width: $breakpoint) {
+                            font-size: 0.7rem;
+                        }
+                    }
+            
+                    &:hover {
+                        background-color: $yellow;
+                        color: $white;
+                        box-shadow: none;
                     }
                 }
-        
-                &:hover {
-                    background-color: $yellow;
-                    color: $white;
-                    box-shadow: none;
+            }
+        }
+
+        .addresses {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80vw;
+            text-align: center;
+
+            .address {
+                border: 1px solid $yellow;
+                border-radius: 0.6rem;
+                padding: 0.5rem;
+                margin: 0.5rem;
+
+                #title {
+                    font-size: 1.1rem;
+                    font-weight: 600;
+                    margin: 0;
+                    margin-bottom: 0.5rem;
+                }
+
+                #address {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+
+                #province {
+                    font-size: 0.9rem;
+                    margin: 0;
+                }
+
+                #postal {
+                    font-size: 0.9rem;
+                    margin: 0;
                 }
             }
         }

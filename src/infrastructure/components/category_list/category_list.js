@@ -1,18 +1,18 @@
-import React from "react";
-import "./category_list.scss";
-import Theme from "../../../application/globals/theme";
+import React from 'react';
+import './category_list.scss';
+import Theme from '../../../application/globals/theme';
 
-import { ThemeProvider } from "styled-components";
-import IconButton from "@mui/material/IconButton";
-import ColorLensIcon from "@mui/icons-material/ColorLens";
-import HandymanIcon from "@mui/icons-material/Handyman";
-import DesignServicesIcon from "@mui/icons-material/DesignServices";
-import DevicesOtherIcon from "@mui/icons-material/DevicesOther";
-import CheckroomIcon from "@mui/icons-material/Checkroom";
-import CountertopsIcon from "@mui/icons-material/Countertops";
-import FaceRetouchingNaturalIcon from "@mui/icons-material/FaceRetouchingNatural";
-import RollerSkatingIcon from "@mui/icons-material/RollerSkating";
-import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import { ThemeProvider } from 'styled-components';
+import IconButton from '@mui/material/IconButton';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
+import HandymanIcon from '@mui/icons-material/Handyman';
+import DesignServicesIcon from '@mui/icons-material/DesignServices';
+import DevicesOtherIcon from '@mui/icons-material/DevicesOther';
+import CheckroomIcon from '@mui/icons-material/Checkroom';
+import CountertopsIcon from '@mui/icons-material/Countertops';
+import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
+import RollerSkatingIcon from '@mui/icons-material/RollerSkating';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
 const CategoryList = () => {
   return (

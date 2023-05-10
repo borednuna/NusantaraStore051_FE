@@ -1,77 +1,111 @@
-import React from "react";
-import "./product_details.scss";
+import React, { useEffect, useState } from 'react';
+import './product_details.scss';
 
-import Gallery from "../../../infrastructure/components/gallery/gallery";
-import ProductHeader from "../../../infrastructure/components/product_header/product_header";
-import PriceTag from "../../../infrastructure/components/price_tag/price_tag";
-import SellerCard from "../../../infrastructure/components/seller_card/seller_card";
-import ReviewsCard from "../../../infrastructure/components/reviews_card/reviews_card";
-import CardCarousel from "../../../infrastructure/components/card_carousel/card_carousel";
+import Gallery from '../../../infrastructure/components/gallery/gallery';
+import ProductHeader from '../../../infrastructure/components/product_header/product_header';
+import PriceTag from '../../../infrastructure/components/price_tag/price_tag';
+import SellerCard from '../../../infrastructure/components/seller_card/seller_card';
+import ReviewsCard from '../../../infrastructure/components/reviews_card/reviews_card';
+import CardCarousel from '../../../infrastructure/components/card_carousel/card_carousel';
 
-const ProductDetails = () => {
+const ProductDetails = (props) => {
+  const [item, setItem] = useState(props.props);
+  const [details, setDetails] = useState({});
+  const [seller, setSeller] = useState({});
+  const [images, setImages] = useState([]);
+
+  const fetchProductDetails = () => {
+    if (item === undefined) {
+      return;
+    }
+    const url = 'http://localhost:3001/product_details/' + item.id;
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setDetails(result.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const fetchSeller = () => {
+    if (item === undefined) {
+      return;
+    }
+    const url = 'http://localhost:3001/users/' + item.user_id;
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setSeller(result.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  const fetchImages = () => {
+    if (item === undefined) {
+      return;
+    }
+    const url = 'http://localhost:3001/images/' + item.id;
+    fetch(url, {
+      method: 'GET',
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        setImages(result.data);
+      })
+      .catch((error) => console.error(error));
+  };
+
+  useEffect(() => {
+    setItem(props.props);
+  }, [props.props]);
+
+  useEffect(() => {
+    fetchProductDetails();
+    fetchSeller();
+    fetchImages();
+  }, [item]);
+
   return (
     <div className="productdetails">
       <section className="head">
-        <Gallery />
-        <ProductHeader />
+        <Gallery props={images} />
+        <ProductHeader props={item} />
       </section>
 
-      <PriceTag />
+      <PriceTag props={item} />
 
       <section className="details">
         <div className="description">
-          <SellerCard />
+          <SellerCard props={seller} />
           <p id="subtitle">Product Description</p>
-          <p id="subtext">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-            <br />
-            <br />
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim id est laborum
-          </p>
+          <p id="subtext">{item === undefined ? '' : item.description}</p>
 
           <p id="subtitle">Product Details</p>
           <p id="subtext">
             <table>
               <tr>
                 <td>Weight</td>
-                <td>1 kg</td>
+                <td>{details.weight + ' kg'}</td>
               </tr>
               <tr>
                 <td>Dimensions</td>
-                <td>20 cm x 20 cm x 20 cm</td>
+                <td>{details.dimensions}</td>
               </tr>
               <tr>
                 <td>Color</td>
-                <td>Red, gray, blue, black</td>
+                <td>{details.color}</td>
               </tr>
               <tr>
                 <td>Material</td>
-                <td>Canvas fabric</td>
+                <td>{details.material}</td>
               </tr>
               <tr>
                 <td>Made In</td>
-                <td>Keputih,</td>
+                <td>Keputih, Surabaya</td>
               </tr>
             </table>
           </p>

@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import "./feedback.scss";
+import React, { useState } from 'react';
+import './feedback.scss';
 
-import TextField from "@mui/material/TextField";
-import Button from "@mui/material/Button";
-import Snackbar from "@mui/material/Snackbar";
-import MuiAlert from "@mui/material/Alert";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
 
 const Alert = React.forwardRef(function Alert(props, ref) {
   return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
 });
 
 const Feedback = () => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
@@ -19,7 +19,7 @@ const Feedback = () => {
   };
 
   const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
 
@@ -27,7 +27,6 @@ const Feedback = () => {
   };
 
   const handleInputChange = (event) => {
-    console.log(inputValue);
     setInputValue(event.target.value);
   };
 
