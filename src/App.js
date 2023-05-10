@@ -28,20 +28,18 @@ function App() {
       .then((response) => response.json())
       .then((result) => {
         setProducts(result.data);
-        console.log(result);
       })
       .catch((error) => console.error(error));
   };
 
   useEffect(() => {
     fetchProducts();
-    console.log(products);
   }, []);
 
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className="App" onLoad={fetchProducts}>
+        <div className="App">
           <Router>
             <Chat />
             <Header />
