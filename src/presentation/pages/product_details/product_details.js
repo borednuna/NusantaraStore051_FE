@@ -21,6 +21,9 @@ const ProductDetails = (props) => {
     const url = 'https://146.190.100.158:3001/product_details/' + item.id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
@@ -36,6 +39,9 @@ const ProductDetails = (props) => {
     const url = 'https://146.190.100.158:3001/users/' + item.user_id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
@@ -51,6 +57,9 @@ const ProductDetails = (props) => {
     const url = 'https://146.190.100.158:3001/images/' + item.id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {

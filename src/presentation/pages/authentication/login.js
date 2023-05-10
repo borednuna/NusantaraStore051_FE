@@ -35,7 +35,10 @@ const Login = () => {
   const sendData = () => {
     fetch('https://146.190.100.158:3001/auth/login', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 
+        'Content-Type': 'application/json' ,
+        'Access-Control-Allow-Origin': '*',
+      },
       body: JSON.stringify(data),
     })
       .then((response) => response.text())

@@ -18,6 +18,9 @@ const Wishlist = () => {
     const url = 'https://146.190.100.158:3001/wishlists/user/' + user.id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {

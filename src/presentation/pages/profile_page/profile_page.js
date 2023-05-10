@@ -78,7 +78,10 @@ const ProfilePage = () => {
     const url = 'https://146.190.100.158:3001/users/' + sessionUser.id;
     fetch(url, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+      },
       body: JSON.stringify(data),
     })
       .then((response) => response.text())
@@ -92,6 +95,9 @@ const ProfilePage = () => {
     const url = 'https://146.190.100.158:3001/users/' + sessionUser.id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
@@ -104,6 +110,9 @@ const ProfilePage = () => {
     const url = 'https://146.190.100.158:3001/addresses/' + sessionUser.id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
@@ -130,6 +139,9 @@ const ProfilePage = () => {
   const handleLogout = () => {
     fetch('https://146.190.100.158:3001/auth/logout', {
       method: 'POST',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.text())
       .then((result) => {

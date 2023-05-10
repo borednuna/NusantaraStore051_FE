@@ -24,6 +24,9 @@ const Cart = () => {
     const url = 'https://146.190.100.158:3001/images/' + id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
@@ -43,6 +46,9 @@ const Cart = () => {
     const url = 'https://146.190.100.158:3001/carts/' + user.id;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
@@ -58,6 +64,9 @@ const Cart = () => {
     const url = 'https://146.190.100.158:3001/carts/cart_items/' + cart;
     fetch(url, {
       method: 'GET',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+      },
     })
       .then((response) => response.json())
       .then((result) => {
