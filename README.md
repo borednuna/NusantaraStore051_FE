@@ -1,70 +1,25 @@
-# Getting Started with Create React App
+# Frontend for Nusantara Store Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Study Case
+Briefly, the study case is making a functional e-commerce web that has the minimum requirement stated in the problemset.
 
-## Available Scripts
+## Main Features
+- Using Reactjs as the javascript library for web development
+- Using Sass as the styling sheet instead of Css because it's more functional and powerful
+- Responsive for both desktop and mobile view.
+- Using React Router to route pages. The product details for each product fetched from backend is configured using map function.
+- Using React Redux and Persistor to store user data in a session.
+- Using SwiperJs for the cards carousel and image view.
+- Using Material UI for some of the components
+- Adhere to clean architecture to [this reference](https://kpiteng.medium.com/react-clean-architecture-e4144a0788b6)
+- Profile view when user is logged in
+- Cart view when user is logged in and added products to the cart
+- Initial design for this web app would be accessible [here](https://www.figma.com/file/cmJ5izxBjRvp2NIbkOo5Q5/NusantaraStore?type=design&node-id=0%3A1&t=4XSihV5JFBowthRh-1)
+- The preview of chatbox is added but it's not yet implemented.
 
-In the project directory, you can run:
+## Deployment
+- This web app is deployed using Vercel and would be accessible [here](https://nusantarastore051.vercel.app/)
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Constraints / Obstacles
+- The resources provided by [backend](https://github.com/borednuna/nusantaraStore051_be) is not secure because it is served over HTTP instead of HTTPS. So the contents of the web app won't load on some browser because HTTP resources are blocked by default. It could be resolved by disabling protection for this web app on the browser.
+- The main challenge on the React development itself would be maintaining the user information through the routes. It is resolved by using Redux and Persistor.
