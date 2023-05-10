@@ -33,7 +33,7 @@ const PriceTag = (props) => {
       return;
     }
 
-    const url = 'http://146.190.100.158:3001/wishlists/user/' + user.id;
+    const url = 'https://146.190.100.158:3001/wishlists/user/' + user.id;
     fetch(url, {
       method: 'GET',
     })
@@ -49,7 +49,7 @@ const PriceTag = (props) => {
       return;
     }
 
-    const url = 'http://146.190.100.158:3001/detailed_wishlists/';
+    const url = 'https://146.190.100.158:3001/detailed_wishlists/';
     fetch(url, {
       method: 'POST',
       body: JSON.stringify({
