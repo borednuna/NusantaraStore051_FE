@@ -21,7 +21,7 @@ const Cart = () => {
   const user = useSelector((state) => state.user);
 
   const getCoverImage = (id) => {
-    const url = 'http://localhost:3001/images/' + id;
+    const url = 'http://146.190.100.158:3001/images/' + id;
     fetch(url, {
       method: 'GET',
     })
@@ -40,7 +40,7 @@ const Cart = () => {
     if (user === undefined) {
       return;
     }
-    const url = 'http://localhost:3001/carts/' + user.id;
+    const url = 'http://146.190.100.158:3001/carts/' + user.id;
     fetch(url, {
       method: 'GET',
     })
@@ -55,7 +55,7 @@ const Cart = () => {
     if (user === undefined || cart === undefined) {
       return;
     }
-    const url = 'http://localhost:3001/carts/cart_items/' + cart;
+    const url = 'http://146.190.100.158:3001/carts/cart_items/' + cart;
     fetch(url, {
       method: 'GET',
     })

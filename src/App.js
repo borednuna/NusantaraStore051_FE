@@ -21,7 +21,7 @@ import Signup from './presentation/pages/authentication/signup';
 function App() {
   const [products, setProducts] = useState({});
   const fetchProducts = () => {
-    const url = 'http://localhost:3001/products';
+    const url = 'http://146.190.100.158:3001/products';
     fetch(url, {
       method: 'GET',
     })

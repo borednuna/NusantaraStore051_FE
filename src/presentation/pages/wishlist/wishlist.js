@@ -15,7 +15,7 @@ const Wishlist = () => {
   const [items, setItems] = useState([]);
 
   const getWishlistId = () => {
-    const url = 'http://localhost:3001/wishlists/user/' + user.id;
+    const url = 'http://146.190.100.158:3001/wishlists/user/' + user.id;
     fetch(url, {
       method: 'GET',
     })

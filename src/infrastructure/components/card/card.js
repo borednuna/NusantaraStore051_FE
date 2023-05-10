@@ -12,7 +12,7 @@ const Card = (props) => {
     if (item === undefined) {
       return;
     }
-    const url = 'http://localhost:3001/images/' + item.id;
+    const url = 'http://146.190.100.158:3001/images/' + item.id;
     fetch(url, {
       method: 'GET',
     })
