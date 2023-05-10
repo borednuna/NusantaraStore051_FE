@@ -75,7 +75,7 @@ const ProfilePage = () => {
   };
 
   const sendData = () => {
-    const url = 'https://146.190.100.158:3001/users/' + sessionUser.id;
+    const url = 'http://146.190.100.158:3001/users/' + sessionUser.id;
     fetch(url, {
       method: 'PUT',
       headers: {
@@ -92,7 +92,7 @@ const ProfilePage = () => {
   };
 
   const fetchData = () => {
-    const url = 'https://146.190.100.158:3001/users/' + sessionUser.id;
+    const url = 'http://146.190.100.158:3001/users/' + sessionUser.id;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -107,7 +107,7 @@ const ProfilePage = () => {
   };
 
   const getAllAddresses = () => {
-    const url = 'https://146.190.100.158:3001/addresses/' + sessionUser.id;
+    const url = 'http://146.190.100.158:3001/addresses/' + sessionUser.id;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -137,7 +137,7 @@ const ProfilePage = () => {
   }, [sessionUser]);
 
   const handleLogout = () => {
-    fetch('https://146.190.100.158:3001/auth/logout', {
+    fetch('http://146.190.100.158:3001/auth/logout', {
       method: 'POST',
       headers: {
         'Access-Control-Allow-Origin': '*',

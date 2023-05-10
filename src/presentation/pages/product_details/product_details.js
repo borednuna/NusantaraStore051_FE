@@ -18,7 +18,7 @@ const ProductDetails = (props) => {
     if (item === undefined) {
       return;
     }
-    const url = 'https://146.190.100.158:3001/product_details/' + item.id;
+    const url = 'http://146.190.100.158:3001/product_details/' + item.id;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -36,7 +36,7 @@ const ProductDetails = (props) => {
     if (item === undefined) {
       return;
     }
-    const url = 'https://146.190.100.158:3001/users/' + item.user_id;
+    const url = 'http://146.190.100.158:3001/users/' + item.user_id;
     fetch(url, {
       method: 'GET',
       headers: {
@@ -54,7 +54,7 @@ const ProductDetails = (props) => {
     if (item === undefined) {
       return;
     }
-    const url = 'https://146.190.100.158:3001/images/' + item.id;
+    const url = 'http://146.190.100.158:3001/images/' + item.id;
     fetch(url, {
       method: 'GET',
       headers: {
